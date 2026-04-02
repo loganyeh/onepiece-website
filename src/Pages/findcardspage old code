@@ -1,0 +1,30 @@
+
+            {/* Page Container */}
+            <div className="h-screen w-screen flex flex-col items-center bg-gray-50">
+
+                {/* Header */}
+                <div className="border h-16 w-full flex justify-between bg-white">
+                    {/* Logo */}
+                    <div className="border h-full flex justify-start items-center">
+                        <div className="border flex justify-center items-center">One Piece Card Game</div>
+                    </div>
+
+                    {/* Menu */}
+                    <div className="border h-full flex justify-end items-center">
+                        <div className="border flex justify-center items-center text-6xl">=</div>
+                    </div>
+                </div>
+
+                {/* Card List Title */}
+                <div className="border border-red-600 h-32 w-full flex justify-center items-center">
+                    <div className="border text-4xl">Card List</div>
+                </div>
+
+                {/* Filter Search */}
+                <div className="border h-80 w-full flex justify-center ">
+                    <div className="border border-red-600 h-full w-11/12 bg-white"></div>
+                </div>
+                
+
+            </div>
+        

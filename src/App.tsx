@@ -1,11 +1,14 @@
 import './App.css'
+// import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+// page imports
+import FindCardsPage from './Pages/FindCardsPage'
 
 function App() {
 
   return (
     <>
-      <div className='border border-red-600 h-screen w-screen'></div>
-      
+      <FindCardsPage />
     </>
   )
 }
