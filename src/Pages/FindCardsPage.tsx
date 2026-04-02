@@ -26,7 +26,7 @@ function FindCardsPage(){
 
     return(
         <>
-            <div className="min-h-screen bg-gray-50 pb-96">
+            <div className="min-h-screen bg-gray-50">
 
                 {/* Header */}
                 <div className="border h-14 w-full flex justify-between bg-white">
@@ -146,23 +146,25 @@ function FindCardsPage(){
                         </div>
 
                         {/* Extra Info */}
-                        {footerInfo.map((data, index) => {
-                            return <div key={index} className={`${index === 7 ? "" : "border-b-2 border-blue-600"} h-12 mt-1 flex justify-between items-center`}>
-                                        <div className="flex items-start gap-3">
-                                            <div className={`${index === 0 || index === 2 ? `border` : ``} h-6 w-6 flex justify-center rounded-full`}><i className={`bx ${data.icon} text-xl`} ></i></div>
-                                            {/* <div className="h-6 w-6 flex justify-center items-center rounded-full"><i className={`bx ${data.icon} text-xl`} ></i></div> */}
-                                            <div className="text-sm">{data.text}</div>
+                        <div className="mt-4"> 
+                            {footerInfo.map((data, index) => {
+                                return <div key={index} className={`${index === 7 ? "" : "border-b-2 border-blue-600"} h-12 mt-1 flex justify-between items-center`}>
+                                            <div className="flex items-start gap-3">
+                                                <div className={`${index === 0 || index === 2 ? `border` : ``} h-6 w-6 flex justify-center rounded-full`}><i className={`bx ${data.icon} text-xl`} ></i></div>
+                                                {/* <div className="h-6 w-6 flex justify-center items-center rounded-full"><i className={`bx ${data.icon} text-xl`} ></i></div> */}
+                                                <div className="text-sm">{data.text}</div>
+                                            </div>
+                                            {data.plusSign 
+                                                ? 
+                                                <div className="h-6 w-6 flex justify-center items-center bg-gray-900 rounded-full"><i className='bx bx-plus text-xl' ></i></div>
+                                                : 
+                                                ""
+                                            }
                                         </div>
-                                        {data.plusSign 
-                                            ? 
-                                            <div className="h-6 w-6 flex justify-center items-center bg-gray-900 rounded-full"><i className='bx bx-plus text-xl' ></i></div>
-                                            : 
-                                            ""
-                                        }
-                                    </div>
-                        })}
+                            })}
+                        </div>
                         
-                        {/*  */}
+                        {/* Fint Print */}
                         <div className="h-6 mt-4 flex justify-start gap-4">
                             <div className="text-[10px]">FOR INQUIRES</div>
                             <div className="text-[10px]">COOKIE POLICY</div>
@@ -172,6 +174,33 @@ function FindCardsPage(){
                         <div className="mt-6">
                             <div className="text-4xl font-medium">ONE PIECE</div>
                             <div className="ml-12 text-lg font-extralight">Card Game</div>
+                        </div>
+
+                        {/* Copyright */}
+                        <div className="text-[10px] mt-6 leading-loose">
+                            <div>
+                                ©Eiichiro Oda/Shueisha<br /> 
+                                ©Eiichiro Oda/Shueisha, Toei Animation
+                            </div>
+
+                            <div className="mt-6 leading-loose">
+                                All images, text and data on this website may not be reproduced<br />
+                                without permission.<br />
+                                Please note that the images used on this website may differ from<br /> 
+                                the actual product as it is still under development.<br />
+                                *Apple, and the Apple logo are trademarks of Apple Inc. in North<br /> 
+                                America or the local region. App Store is Apple Inc.’s service mark.<br />
+                                *Google Play and the Google Play logo are trademarks or<br /> 
+                                registered trademarks of Google LLC.
+                            </div>
+                        </div>
+
+                        {/* Trademarks */}
+                        <div className="h-10 mt-6 flex gap-2">
+                            <i className='bx bxl-imdb text-4xl'></i>
+                            <i className='bx bxl-microsoft text-4xl'></i>
+                            <i className='bx bxl-adobe text-4xl'></i>
+                            <i className='bx bxl-slack text-4xl'></i>
                         </div>
 
                     </div>
