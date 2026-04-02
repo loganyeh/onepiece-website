@@ -7,14 +7,6 @@ type FooterData = {
 }
 
 function FindCardsPage(){
-    // type FooterInfo = {
-    //     info: FooterData[];
-    // };
-    // const FooterInfo = {
-    //     info: FooterData[];
-    // };
-    // LOOK UP WHY I DID THE TOP
-
     const footerInfo: FooterData[] = [
         {icon: `bx bx-question-mark`, text: "FOR BEGINNERS", plusSign: true},
         {icon: `bx bxs-book-alt`, text: "RULES", plusSign: true},
@@ -31,37 +23,24 @@ function FindCardsPage(){
             <div className="min-h-screen bg-gray-50">
 
                 {/* Header */} 
-                <div className="border relative h-14 flex items-center bg-white"> 
+                <div className="h-14 px-2 flex justify-between items-center bg-white"> 
                     {/* Logo */} 
-                    <div className="absolute left-3"> 
+                    <div className="flex flex-col items-center"> 
                         <div className="font-medium text-2xl">ONE PIECE</div> 
-                        <div className="ml-4 font-light text-sm">CARD GAME</div> 
+                        <div className="font-light text-sm">CARD GAME</div> 
                     </div> 
                     {/* Menu */} 
-                    <div className="absolute right-4 text-4xl">=</div> 
-                </div>
-                {/* CHECK THIS MAKE SURE WHICH ONE IS BETTER /AFTER/ */}  
-
-                {/* LEFT OFF HERE */}
-                {/* Header */} 
-                <div className="border h-14 w-full flex justify-between bg-white"> 
-                    {/* Logo */} 
-                    <div className="border h-full flex justify-start items-center"> 
-                        <div className="font-bold text-2xl">ONE PIECE</div> 
-                        <div className="font-bold text-2xl">CARD GAME</div> 
-                    </div> 
-
-                    {/* Menu */} 
-                    <div className="border h-full flex justify-end items-center"> 
-                        <div className="border h-full flex justify-center items-center text-4xl">=</div> 
-                    </div> 
-                </div>
+                    <div className="text-4xl">=</div> 
+                </div> 
 
                 {/* Page Container */}
                 <div className="min-h-screen max-w-6xl mx-auto px-3">
 
                     {/* Card List Title */}
-                    <div className="h-36 flex justify-center items-center text-4xl font-bold tracking-tighter">CARD LIST</div>
+                    <div className="h-36 flex flex-col justify-center items-center">
+                        <div className="text-4xl font-bold tracking-tighter">CARD LIST</div>
+                        <i className='bx bx-anchor text-2xl'></i>
+                    </div>
 
                     {/* Filter Search */}
                     <div className="max-w-6xl px-4 bg-white shadow-md">
