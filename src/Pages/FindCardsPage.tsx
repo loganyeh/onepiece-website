@@ -137,26 +137,27 @@ function FindCardsPage(){
                             </div>
 
                             {/* Add More Button */}
-                            <div className="relative h-10 w-full bg-black flex justify-center items-center text-white rounded-3xl">
-                                <div className="font-semibold">Add more</div>
-                                <div className="absolute right-4 flex items-center"><i className='bx bx-plus text-xl' ></i></div>
-                            </div>
-
-                            <div className="py-2 flex justify-center items-center bg-black text-white rounded-3xl">
-                                <div className="font-semibold">Add more</div>                   
-                                <i className='bx bx-plus border border-white w-8 text-xl' ></i>
+                            <div className="px-3 py-2.5 flex items-center bg-black text-white rounded-3xl"> 
+                                <div className="flex-1"></div>
+                                <div className="font-semibold text-sm">Add more</div>                   
+                                <div className="flex-1 flex justify-end">
+                                    <i className='bx bx-plus text-2xl' ></i>
+                                </div>
                             </div>
 
                             {/* Checkbox */}
-                            <div className="flex items-center gap-1">
+                            <div className="flex gap-2">
                                 <div className="border-2 h-5 w-5"></div>
                                 <div className="text-[13px] font-semibold tracking-tight">Hide reprint cards</div>
                             </div>
 
                             {/* Search Button */}
-                            <div className="relative py-2 bg-yellow-700 flex justify-center items-center text-white rounded-3xl">
-                                <div className="font-semibold">Search</div>
-                                <div className="absolute right-4 flex items-center"><i className='bx bx-search text-xl' ></i></div>
+                            <div className="px-3 py-2.5 bg-olive-500 flex justify-center items-center text-white rounded-3xl">
+                                <div className="flex-1"></div>
+                                <div className="font-semibold text-sm tracking-tighter">SEARCH</div>
+                                <div className="flex-1 flex justify-end">
+                                    <i className='bx bx-search text-xl' ></i>
+                                </div>
                             </div>
 
                         </div>
