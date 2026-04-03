@@ -12,6 +12,10 @@ type HeaderDM = {
     dropdownArrow: boolean;
 }
 
+type ColorFilterDM = {
+    color: string[];
+}
+
 function FindCardsPage(){
     const footerInfo: FooterData[] = [
         {icon: `bx bx-question-mark`, text: "FOR BEGINNERS", plusSign: true},
@@ -34,6 +38,11 @@ function FindCardsPage(){
         {icon: `bx bx-file-find`, text: "CARDS", dropdownArrow: true},
         {icon: `bx bx-shopping-bag`, text: "SHOP", dropdownArrow: true},
     ]
+    
+    const colorFilterData = ["ALL", "Red", "Green", "Blue", "Purple", "Black", "Yellow", "Multicolor"];
+    const cardTypeFilterData = ["ALL", "Leader", "Chracter", "Stage", "Event"];
+    const illustationTypeFilterData = ["ALL", "Comic", "Animation", "Original Illustrations", "Other"];
+    const blockIconFilterData = ["1", "2", "3", "4", "5"];
 
     return(
         <>
@@ -85,6 +94,7 @@ function FindCardsPage(){
                         <i className='bx bxs-down-arrow text-[6px] xl:text-[8px] 2xl:text-[10px]' ></i>
                     </div>
 
+                    {/* Social Media */}
                     <div className="flex gap-2 xl:gap-3 2xl:gap-5">
                         <i className='bx bxl-youtube xl:text-2xl 2xl:text-4xl' ></i>
                         <i className='bx bxl-twitter xl:text-2xl 2xl:text-4xl' ></i>
@@ -117,50 +127,136 @@ function FindCardsPage(){
                     </div>
 
                     {/* Filter Search */}
-                    <div className="max-w-6xl px-4 py-5 bg-white shadow-md">
-                        <div className="flex flex-col gap-5">
+                    <div className="max-w-6xl px-4 md:px-8 py-5 md:py-14 lg:pt-10 lg:pb-5 bg-white shadow-md">
+
+                        {/* Filter Search Up to Tablet MD */}
+                        <div className="lg:hidden flex flex-col gap-5 md:gap-10">
 
                             {/* Search */}
-                            <div className="border-b pb-1 flex justify-between">
-                                <div className="text-sm text-gray-400 font-semibold tracking-wide">Search ...</div>
-                                <i className='bx bx-search text-xl text-zinc-800'></i>
+                            <div className="border-b pb-1 md:pb-3 flex justify-between items-center">
+                                <div className="text-sm md:text-3xl text-gray-300 font-semibold tracking-wide">Search ...</div>
+                                <i className='bx bx-search text-xl md:text-3xl text-zinc-800'></i>
                             </div>
 
                             {/* Pack Set Name */}
-                            <div className="border-b pb-2 flex justify-between items-center">
-                                <div className="flex-1 text-sm font-semibold">
+                            <div className="border-b pb-2 md:pb-4 flex justify-between items-center">
+                                <div className="flex-1 text-zinc-800 text-sm md:text-3xl font-semibold">
                                     BOOSTER PACK<br />
                                     - ADVENTURE ON KAMI'S ISLAND<br />
                                     [OP15-EB04]
                                 </div>
-                                <i className='bx bxs-down-arrow w-6 shrink-0'></i>
+                                <i className='bx bxs-down-arrow w-6 md:text-lg shrink-0'></i>
                             </div>
 
                             {/* Add More Button */}
-                            <div className="px-3 py-2.5 flex items-center bg-black text-white rounded-3xl"> 
+                            <div className="px-3 md:px-5 py-2.5 md:py-5 flex items-center bg-black text-white rounded-3xl md:rounded-full"> 
                                 <div className="flex-1"></div>
-                                <div className="font-semibold text-sm">Add more</div>                   
+                                <div className="font-semibold text-sm md:text-3xl">Add more</div>                   
                                 <div className="flex-1 flex justify-end">
-                                    <i className='bx bx-plus text-2xl' ></i>
+                                    <i className='bx bx-plus text-2xl md:text-4xl' ></i>
                                 </div>
                             </div>
 
                             {/* Checkbox */}
-                            <div className="flex gap-2">
-                                <div className="border-2 h-5 w-5"></div>
-                                <div className="text-[13px] font-semibold tracking-tight">Hide reprint cards</div>
+                            <div className="flex items-center gap-2 md:gap-3">
+                                <div className="border-2 h-5 w-5 md:h-8 md:w-8"></div>
+                                <div className="text-[13px] md:text-2xl font-semibold tracking-tight">Hide reprint cards</div>
                             </div>
 
                             {/* Search Button */}
-                            <div className="px-3 py-2.5 bg-olive-500 flex justify-center items-center text-white rounded-3xl">
+                            <div className="px-3 md:px-5 py-2.5 md:py-5 bg-olive-500 flex justify-center items-center text-white rounded-3xl md:rounded-full">
                                 <div className="flex-1"></div>
-                                <div className="font-semibold text-sm tracking-tighter">SEARCH</div>
+                                <div className="font-semibold text-sm md:text-3xl tracking-tighter">SEARCH</div>
                                 <div className="flex-1 flex justify-end">
-                                    <i className='bx bx-search text-xl' ></i>
+                                    <i className='bx bx-search text-xl md:text-4xl' ></i>
                                 </div>
                             </div>
 
                         </div>
+
+                        {/* Filter Search Up to Laptop LG */}
+                        <div className="hidden lg:flex flex-col gap-5">
+
+                            {/* Search and Packs */}
+                            <div className="flex gap-8">
+                                {/* Search */}
+                                <div className="border-b pb-1 flex-1 flex justify-between items-center">
+                                    <div className="text-sm text-gray-300 font-semibold tracking-wide">Search ...</div>
+                                    <i className='bx bx-search text-xl text-zinc-800'></i>
+                                </div>
+
+                                {/* Pack Set Name */}
+                                <div className="border-b pb-1 flex-1 flex justify-between items-center">
+                                    <div className="flex-1 text-zinc-800 text-sm font-semibold">
+                                        BOOSTER PACK - ADVENTURE ON KAMI'S ISLAND [OP15-EB04]
+                                    </div>
+                                    <i className='bx bxs-down-arrow w-6 text-center text-sm shrink-0'></i>
+                                </div>
+                            </div>
+ 
+                            {/* Filters */}
+                            <div className="flex justify-between">
+                                <div className="">
+                                    <div className="text-sm font-semibold">Color</div>
+                                    <div className="flex gap-2 font-semibold">
+                                        {colorFilterData.map((color, index) => {
+                                            return <div key={index} className="border px-2.5 text-sm">{color}</div>
+                                        })}
+                                    </div>
+                                </div>
+
+                                <div className="">
+                                    <div className="text-sm font-semibold">Card Type</div>
+                                    <div className="flex gap-2 font-semibold">
+                                        {cardTypeFilterData.map((color, index) => {
+                                            return <div key={index} className="border px-2.5 text-sm">{color}</div>
+                                        })}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="flex justify-between">
+                                <div className="">
+                                    <div className="text-sm font-semibold">Illustration Type</div>
+                                    <div className="flex gap-2 font-semibold">
+                                        {illustationTypeFilterData.map((color, index) => {
+                                            return <div key={index} className="border px-2.5 text-sm">{color}</div>
+                                        })}
+                                    </div>
+                                </div>
+
+                                <div className="">
+                                    <div className="text-sm font-semibold">Block Icon</div>
+                                    <div className="flex gap-2 font-semibold">
+                                        {blockIconFilterData.map((color, index) => {
+                                            return <div key={index} className="border px-2.5 text-sm">{color}</div>
+                                        })}
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+
+                            {/* Checkbox */}
+                            <div className="flex items-center gap-2">
+                                <div className="border-2 h-5 w-5"></div>
+                                <div className="text-sm font-semibold tracking-tight">Hide reprint cards</div>
+                            </div>
+
+                            {/* Search Button */}
+                            <div className="flex justify-center">
+                                <div className="w-96 px-4 py-2.5 bg-olive-500 flex justify-center items-center text-white rounded-full shrink-0">
+                                    <div className="flex-1"></div>
+                                    <div className="font-semibold text-sm tracking-tighter">SEARCH</div>
+                                    <div className="flex-1 flex justify-end">
+                                        <i className='bx bx-search text-xl' ></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
                     </div>
 
                     {/* Search Results Arrows */}
