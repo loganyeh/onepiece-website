@@ -214,7 +214,8 @@ function FindCardsPage(){
                                     </div>
                                 </div>
                             </div>
-
+                            
+                            {/* Filters */}
                             <div className="flex justify-between">
                                 <div className="">
                                     <div className="text-sm font-semibold">- Illustration Type</div>
@@ -257,14 +258,14 @@ function FindCardsPage(){
                     {/* Search Results Arrows */}
                     <div className="mt-5 flex justify-between items-center">
                         <div className="flex gap-1.5">
-                            <div className="border flex items-center px-2 gap-1 bg-white text-xs font-bold rounded-xl "><span className="font-light text-[11px]">X</span> Clear</div>
-                            <div className="font-bold">196 Results</div>
+                            <div className="border flex items-center px-2.5 py-0.5 gap-1 bg-white text-xs font-bold rounded-xl "><span className="font-light text-[11px]">X</span> Clear</div>
+                            <div className="font-bold text-center text-sm">196 Results</div>
                         </div>
 
-                        <div className="h-8 flex justify-between items-center bg-white">
-                            <button className="border-r w-12 flex justify-center items-center"><i className='bx bxs-left-arrow text-gray-400 text-sm' ></i></button>
-                            <div className="w-12 flex justify-center items-center text-xs font-bold">1/11</div>
-                            <button className="border-l w-12 flex justify-center items-center"><i className='bx bxs-right-arrow text-black text-sm' ></i></button>
+                        <div className="py-2 flex justify-between items-center bg-white">
+                            <button className="border-r px-4 flex justify-center items-center"><i className='bx bxs-left-arrow text-gray-400 text-sm' ></i></button>
+                            <div className="px-4 flex justify-center items-center text-xs font-bold">1/11</div>
+                            <button className="border-l px-4 flex justify-center items-center"><i className='bx bxs-right-arrow text-black text-sm' ></i></button>
                         </div>
                     </div>
 
