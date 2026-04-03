@@ -116,11 +116,6 @@ function FindCardsPage(){
                         <i className='bx bx-anchor text-3xl md:text-5xl lg:text-3xl'></i>
                     </div>
 
-                    {/* <div className="border h-36 flex flex-col justify-center items-center">
-                        <div className="text-4xl font-bold tracking-tighter">CARD LIST</div>
-                        <i className='bx bx-anchor text-2xl'></i>
-                    </div> */}
-
                     {/* Filter Search */}
                     <div className="max-w-6xl px-4 py-5 bg-white shadow-md">
                         <div className="flex flex-col gap-5">
