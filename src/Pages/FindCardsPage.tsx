@@ -93,24 +93,33 @@ function FindCardsPage(){
 
                 </div> 
 
-
-
-
-
-
-
-
-
-
+                {/* Home -> Card List @ Breakpoint XL */}
+                <div className="hidden px-6 xl:flex mt-8 2xl:mt-4 items-center gap-3 text-amber-500 font-medium text-sm">
+                    <div>HOME</div> 
+                    <i className='bx bxs-right-arrow text-xs' ></i>
+                    <div>CARD LIST</div>
+                </div>
 
                 {/* Page Container */}
-                <div className="min-h-screen max-w-6xl mx-auto px-3">
+                <div className="min-h-screen max-w-6xl mx-auto px-3 lg:px-0 xl:px-14">
 
-                    {/* Card List Title */}
-                    <div className="h-36 flex flex-col justify-center items-center">
+                    {/* CARD LIST TITLE */}
+                    <div className="py-10 md:py-16 lg:pt-10 xl:pt-10 lg:pb-12 text-center">
+                        {/* Home -> Card List @ Breakpoint LG */}
+                        <div className="hidden px-6 lg:flex xl:hidden items-center gap-3 text-amber-500 font-medium text-sm">
+                            <div>HOME</div> 
+                            <i className='bx bxs-right-arrow text-xs' ></i>
+                            <div>CARD LIST</div>
+                        </div>
+                        {/* TITLE */}
+                        <div className="text-[32px] md:text-7xl lg:text-5xl lg:mt-8 xl:mt-0 font-bold tracking-wide md:tracking-tighter leading-tight">CARD LIST</div>
+                        <i className='bx bx-anchor text-3xl md:text-5xl lg:text-3xl'></i>
+                    </div>
+
+                    {/* <div className="border h-36 flex flex-col justify-center items-center">
                         <div className="text-4xl font-bold tracking-tighter">CARD LIST</div>
                         <i className='bx bx-anchor text-2xl'></i>
-                    </div>
+                    </div> */}
 
                     {/* Filter Search */}
                     <div className="max-w-6xl px-4 py-5 bg-white shadow-md">
