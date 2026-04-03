@@ -285,7 +285,7 @@ function FindCardsPage(){
                     {/* Cards Grid */}
                     <div className="mt-4 md:mt-8 lg:mt-6 grid grid-cols-3 lg:grid-cols-5 gap-3 md:gap-5">
                         {Array.from({length: 20}).map((_, index) => {
-                            return <div key={index} className={`border aspect-[2/3] md:aspect-[3/4] rounded-md`}></div>
+                            return <div key={index} className={`border aspect-[2/3] md:aspect-[3/4] bg-blue-300 rounded-md`}></div>
                         })}
                     </div>
                     
@@ -311,15 +311,17 @@ function FindCardsPage(){
                     </div>
 
                     {/* Advertisement Placements */}
-                    <div className="border-4 border-yellow-500 h-32 max-w-6xl p-4 mt-16 flex gap-5 bg-blue-950">
-                        <div className="flex-1 bg-white flex justify-center items-center">Ad# 1</div>
-                        <div className="flex-1 bg-white flex justify-center items-center">Ad# 2</div>
+                    <div className="mt-16 md:mt-32 lg:mt-12 xl:mt-20 flex justify-center">
+                        <div className="border-4 md:border-8 lg:border-3 xl:border-5 2xl:border-6 border-yellow-500 w-full max-w-3xl lg:max-w-sm xl:max-w-lg p-3 md:p-6 lg:p-3 xl:p-4 flex gap-4 md:gap-8 lg:gap-4 xl:gap-5 bg-blue-950">
+                            <div className="flex-1 py-10 md:py-20 lg:py-10 xl:py-14 bg-white flex justify-center items-center">Ad# 1</div>
+                            <div className="flex-1 py-10 md:py-20 lg:py-10 xl:py-14 bg-white flex justify-center items-center">Ad# 2</div>
+                        </div>
                     </div>
 
-                    {/* Splash Art */}
-                    <div className="border h-96 mt-16 -mx-3 flex justify-center items-center">Luffy Splash Art</div>
-
                 </div>
+
+                {/* Splash Art */}
+                <div className="border h-96 mt-16 flex justify-center items-center">Luffy Splash Art</div>
 
                 {/* Footer */}
                 <div className="border h-auto m-w-6xl p-4 bg-blue-950 text-white">
