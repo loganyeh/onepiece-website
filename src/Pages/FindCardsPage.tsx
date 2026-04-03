@@ -200,7 +200,7 @@ function FindCardsPage(){
                                     <div className="text-sm font-semibold">- Color</div>
                                     <div className="flex gap-2 font-semibold">
                                         {colorFilterData.map((color, index) => {
-                                            return <div key={index} className={`border-2 px-3 py-0.5 ${index === 0 ? `bg-black text-white` : `` } text-xs`}>{color}</div>
+                                            return <div key={index} className={`${index === 0 ? "" : `border-2` } px-3 py-0.5 flex ${index === 0 ? `bg-black text-white` : `` } text-xs`}>{color}</div>
                                         })}
                                     </div>
                                 </div>
@@ -209,7 +209,7 @@ function FindCardsPage(){
                                     <div className="text-sm font-semibold">- Card Type</div>
                                     <div className="flex gap-2 font-semibold">
                                         {cardTypeFilterData.map((cardType, index) => {
-                                            return <div key={index} className={`border-2 px-3.5 py-0.5 ${index === 0 ? `bg-black text-white` : `` } text-xs`}>{cardType}</div>
+                                            return <div key={index} className={`${index === 0 ? "" : `border-2` } px-3.5 py-0.5 ${index === 0 ? `bg-black text-white` : `` } text-xs`}>{cardType}</div>
                                         })}
                                     </div>
                                 </div>
@@ -220,7 +220,7 @@ function FindCardsPage(){
                                     <div className="text-sm font-semibold">- Illustration Type</div>
                                     <div className="flex gap-2 font-semibold">
                                         {illustationTypeFilterData.map((illustration, index) => {
-                                            return <div key={index} className={`border-2 px-5.5 py-0.5 ${index === 0 ? `bg-black text-white` : `` } text-xs`}>{illustration}</div>
+                                            return <div key={index} className={`${index === 0 ? "" : `border-2` } px-5.5 py-0.5 ${index === 0 ? `bg-black text-white` : `` } text-xs`}>{illustration}</div>
                                         })}
                                     </div>
                                 </div>
@@ -229,13 +229,11 @@ function FindCardsPage(){
                                     <div className="text-sm font-semibold">- Block Icon</div>
                                     <div className="flex gap-2.5 font-semibold">
                                         {blockIconFilterData.map((num, index) => {
-                                            return <div key={index} className={`border-2 px-[26px] py-0.5 ${index === 0 ? `bg-black text-white` : `` } text-xs`}>{num}</div>
+                                            return <div key={index} className={`${index === 0 ? "" : `border-2` } px-[26px] py-0.5 ${index === 0 ? `bg-black text-white` : `` } text-xs`}>{num}</div>
                                         })}
                                     </div>
                                 </div>
                             </div>
-
-                            
 
                             {/* Checkbox */}
                             <div className="flex items-center gap-2">
@@ -245,12 +243,9 @@ function FindCardsPage(){
 
                             {/* Search Button */}
                             <div className="flex justify-center">
-                                <div className="w-96 px-4 py-2.5 bg-olive-500 flex justify-center items-center text-white rounded-full shrink-0">
-                                    <div className="flex-1"></div>
+                                <div className="relative w-full max-w-sm px-4 py-2.5 bg-olive-500 flex justify-center items-center text-white rounded-full">
                                     <div className="font-semibold text-sm tracking-tighter">SEARCH</div>
-                                    <div className="flex-1 flex justify-end">
-                                        <i className='bx bx-search text-xl' ></i>
-                                    </div>
+                                    <i className='absolute right-4 bx bx-search text-xl' ></i>
                                 </div>
                             </div>
 
