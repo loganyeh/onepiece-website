@@ -142,6 +142,11 @@ function FindCardsPage(){
                                 <div className="absolute right-4 flex items-center"><i className='bx bx-plus text-xl' ></i></div>
                             </div>
 
+                            <div className="py-2 flex justify-center items-center bg-black text-white rounded-3xl">
+                                <div className="font-semibold">Add more</div>                   
+                                <i className='bx bx-plus border border-white w-8 text-xl' ></i>
+                            </div>
+
                             {/* Checkbox */}
                             <div className="flex items-center gap-1">
                                 <div className="border-2 h-5 w-5"></div>
