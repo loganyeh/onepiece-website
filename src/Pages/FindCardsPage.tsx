@@ -12,10 +12,6 @@ type HeaderDM = {
     dropdownArrow: boolean;
 }
 
-type ColorFilterDM = {
-    color: string[];
-}
-
 function FindCardsPage(){
     const footerInfo: FooterData[] = [
         {icon: `bx bx-question-mark`, text: "FOR BEGINNERS", plusSign: true},
@@ -39,6 +35,7 @@ function FindCardsPage(){
         {icon: `bx bx-shopping-bag`, text: "SHOP", dropdownArrow: true},
     ]
     
+    // Varaibles for Search Filter Section @ Breakpoint LG
     const colorFilterData = ["ALL", "Red", "Green", "Blue", "Purple", "Black", "Yellow", "Multicolor"];
     const cardTypeFilterData = ["ALL", "Leader", "Chracter", "Stage", "Event"];
     const illustationTypeFilterData = ["ALL", "Comic", "Animation", "Original Illustrations", "Other"];
@@ -256,7 +253,7 @@ function FindCardsPage(){
                     </div>
 
                     {/* Search Results Arrows */}
-                    <div className="mt-5 md:mt-10 flex justify-between items-center">
+                    <div className="mt-5 md:mt-10 lg:mt-6 flex justify-between items-center">
                         <div className="flex gap-1.5 md:gap-4 lg:gap-3">
                             <div className="border flex items-center px-2.5 md:px-4 lg:px-2.5 py-0.5 md:py-1 lg:py-1.5 gap-1 md:gap-2 lg:gap-1.5 bg-white text-xs md:text-2xl lg:text-xs font-bold md:font-semibold rounded-xl md:rounded-full"><span className="font-light md:font-medium text-[11px] md:text-lg lg:text-[11px]">X</span> Clear</div>
                             <div className="flex items-center font-bold text-center text-sm md:text-3xl lg:text-xl">196 Results</div>
@@ -286,9 +283,9 @@ function FindCardsPage(){
                     </div>
 
                     {/* Cards Grid */}
-                    <div className="mt-4 grid grid-cols-3 gap-3">
-                        {Array.from({length: 18}).map((_, index) => {
-                            return <div key={index} className="border h-36 rounded-md"></div>
+                    <div className="mt-4 md:mt-8 lg:mt-6 grid grid-cols-3 lg:grid-cols-5 gap-3 md:gap-5">
+                        {Array.from({length: 20}).map((_, index) => {
+                            return <div key={index} className={`border aspect-[2/3] md:aspect-[3/4] rounded-md`}></div>
                         })}
                     </div>
                     
