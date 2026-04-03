@@ -42,7 +42,7 @@ function FindCardsPage(){
     const colorFilterData = ["ALL", "Red", "Green", "Blue", "Purple", "Black", "Yellow", "Multicolor"];
     const cardTypeFilterData = ["ALL", "Leader", "Chracter", "Stage", "Event"];
     const illustationTypeFilterData = ["ALL", "Comic", "Animation", "Original Illustrations", "Other"];
-    const blockIconFilterData = ["1", "2", "3", "4", "5"];
+    const blockIconFilterData = ["ALL", "1", "2", "3", "4"];
 
     return(
         <>
@@ -195,21 +195,21 @@ function FindCardsPage(){
                             </div>
  
                             {/* Filters */}
-                            <div className="flex justify-between">
+                            <div className="flex-1 flex justify-between">
                                 <div className="">
-                                    <div className="text-sm font-semibold">Color</div>
+                                    <div className="text-sm font-semibold">- Color</div>
                                     <div className="flex gap-2 font-semibold">
                                         {colorFilterData.map((color, index) => {
-                                            return <div key={index} className="border px-2.5 text-sm">{color}</div>
+                                            return <div key={index} className={`border-2 px-3 py-0.5 ${index === 0 ? `bg-black text-white` : `` } text-xs`}>{color}</div>
                                         })}
                                     </div>
                                 </div>
 
                                 <div className="">
-                                    <div className="text-sm font-semibold">Card Type</div>
+                                    <div className="text-sm font-semibold">- Card Type</div>
                                     <div className="flex gap-2 font-semibold">
-                                        {cardTypeFilterData.map((color, index) => {
-                                            return <div key={index} className="border px-2.5 text-sm">{color}</div>
+                                        {cardTypeFilterData.map((cardType, index) => {
+                                            return <div key={index} className={`border-2 px-3.5 py-0.5 ${index === 0 ? `bg-black text-white` : `` } text-xs`}>{cardType}</div>
                                         })}
                                     </div>
                                 </div>
@@ -217,19 +217,19 @@ function FindCardsPage(){
 
                             <div className="flex justify-between">
                                 <div className="">
-                                    <div className="text-sm font-semibold">Illustration Type</div>
+                                    <div className="text-sm font-semibold">- Illustration Type</div>
                                     <div className="flex gap-2 font-semibold">
-                                        {illustationTypeFilterData.map((color, index) => {
-                                            return <div key={index} className="border px-2.5 text-sm">{color}</div>
+                                        {illustationTypeFilterData.map((illustration, index) => {
+                                            return <div key={index} className={`border-2 px-5.5 py-0.5 ${index === 0 ? `bg-black text-white` : `` } text-xs`}>{illustration}</div>
                                         })}
                                     </div>
                                 </div>
 
                                 <div className="">
-                                    <div className="text-sm font-semibold">Block Icon</div>
-                                    <div className="flex gap-2 font-semibold">
-                                        {blockIconFilterData.map((color, index) => {
-                                            return <div key={index} className="border px-2.5 text-sm">{color}</div>
+                                    <div className="text-sm font-semibold">- Block Icon</div>
+                                    <div className="flex gap-2.5 font-semibold">
+                                        {blockIconFilterData.map((num, index) => {
+                                            return <div key={index} className={`border-2 px-[26px] py-0.5 ${index === 0 ? `bg-black text-white` : `` } text-xs`}>{num}</div>
                                         })}
                                     </div>
                                 </div>
