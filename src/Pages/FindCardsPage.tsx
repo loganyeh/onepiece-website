@@ -5,6 +5,12 @@ type FooterData = {
     text: string;
     plusSign: boolean;
 }
+// header Data type for breakpoint LG @ Laptops
+type HeaderDM = {
+    icon: string;
+    text: string;
+    dropdownArrow: boolean;
+}
 
 function FindCardsPage(){
     const footerInfo: FooterData[] = [
@@ -18,20 +24,84 @@ function FindCardsPage(){
         {icon: `bx bx-shopping-bag`, text: "SHOP", plusSign: true},
     ]
 
+    const headerNavData: HeaderDM[] = [
+        {icon: `bx bx-question-mark`, text: "FOR BEGINNERS", dropdownArrow: true},
+        {icon: `bx bxs-book-alt`, text: "RULES", dropdownArrow: true},
+        {icon: `bx bx-question-mark`, text: "FAQ", dropdownArrow: false},
+        {icon: `bx bx-news`, text: "NEWS", dropdownArrow: false},
+        {icon: `bx bxs-package`, text: "PRODUCTS", dropdownArrow: true},
+        {icon: `bx bxs-ship`, text: "EVENTS", dropdownArrow: false},
+        {icon: `bx bx-file-find`, text: "CARDS", dropdownArrow: true},
+        {icon: `bx bx-shopping-bag`, text: "SHOP", dropdownArrow: true},
+    ]
+
     return(
         <>
             <div className="min-h-screen bg-gray-50">
 
-                {/* Header */} 
-                <div className="h-14 px-2 flex justify-between items-center bg-white"> 
+                {/* Mobile and Tablet Header */} 
+                <div className="px-3 py-2 md:p-6 lg:hidden flex justify-between items-center bg-white"> 
                     {/* Logo */} 
                     <div className="flex flex-col items-center"> 
-                        <div className="font-medium text-2xl">ONE PIECE</div> 
-                        <div className="font-light text-sm">CARD GAME</div> 
+                        <div className="font-medium text-2xl md:text-6xl">ONE PIECE</div> 
+                        <div className="font-light text-sm md:text-2xl md:tracking-wider">CARD GAME</div> 
                     </div> 
                     {/* Menu */} 
-                    <i className='bx bx-menu text-4xl' ></i>
+                    <i className='bx bx-menu text-4xl md:text-7xl' ></i>
                 </div> 
+
+                {/* Laptop Header */} 
+                <div className="hidden p-2 lg:flex gap-3 items-center bg-white"> 
+
+                    {/* Logo */} 
+                    <div className="flex flex-col items-center shrink-0"> 
+                        <div className="font-medium text-sm">ONE PIECE</div> 
+                        <div className="font-light text-[8px]">CARD GAME</div> 
+                    </div> 
+
+                    {/* Dropdowns NAV */}
+                    <div className="flex gap-2.5">
+                        {headerNavData.map((data, index) => {
+                            return <div key={index} className="flex gap-1 items-center shrink-0">
+                                        <div className={`${index === 0 || index === 2 ? "border" : ""} flex justify-center items-center rounded-full`}><i className={`${data.icon}`} ></i></div>
+                                        <div className="text-[9px] font-medium">{data.text}</div>
+                                        {/* <i className='bx bxs-down-arrow text-[8px]' ></i> */}
+                                        {data.dropdownArrow ? (<i className='bx bxs-down-arrow text-[8px]' ></i>) : ""}
+                                    </div>
+                        })}
+                    </div>
+
+                    {/* Search Bar */}
+                    <form className="px-2 py-0.5 flex items-center bg-gray-200 rounded-2xl">
+                        <input type="text" placeholder="Search for cards" className="w-20 text-[9px] font-medium" />
+                        <i className='bx bx-search text-xs' ></i>
+                    </form>
+
+                    {/* Language Settings */}
+                    <div className="flex gap-1 items-center">
+                        <i className='bx bx-world text-xs' ></i>
+                        <div className="font-normal text-[8px]">English</div>
+                        <div className="text-[7px]">- NA/EU/OC/LATAM/ME</div>
+                        <i className='bx bxs-down-arrow text-[6px]' ></i>
+                    </div>
+
+                    <div className="flex gap-2">
+                        <i className='bx bxl-youtube' ></i>
+                        <i className='bx bxl-twitter' ></i>
+                    </div>
+
+
+                </div> 
+
+
+
+
+
+
+
+
+
+
 
                 {/* Page Container */}
                 <div className="min-h-screen max-w-6xl mx-auto px-3">
