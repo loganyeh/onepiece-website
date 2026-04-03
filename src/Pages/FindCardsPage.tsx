@@ -30,7 +30,7 @@ function FindCardsPage(){
                         <div className="font-light text-sm">CARD GAME</div> 
                     </div> 
                     {/* Menu */} 
-                    <div className="text-4xl">=</div> 
+                    <i className='bx bx-menu text-4xl' ></i>
                 </div> 
 
                 {/* Page Container */}
@@ -43,82 +43,87 @@ function FindCardsPage(){
                     </div>
 
                     {/* Filter Search */}
-                    <div className="max-w-6xl px-4 bg-white shadow-md">
-                        <div className="h-full grid grid-rows-[1fr_1fr_1fr_auto_1fr] gap-2">
+                    <div className="max-w-6xl px-4 py-5 bg-white shadow-md">
+                        <div className="flex flex-col gap-5">
+
                             {/* Search */}
-                            <div className="h-16 flex justify-center items-center">
-                                <div className="border-b w-full pb-1 flex justify-between items-center">
-                                    <div className="text-sm text-gray-400 font-semibold tracking-wide">Search ...</div>
-                                    <div className="flex justify-center items-center"><i className='bx bx-search text-xl text-zinc-800'></i></div>
-                                </div>
+                            <div className="border-b w-full pb-1 flex justify-between items-center">
+                                <div className="text-sm text-gray-400 font-semibold tracking-wide">Search ...</div>
+                                <div className="flex justify-center items-center"><i className='bx bx-search text-xl text-zinc-800'></i></div>
                             </div>
 
                             {/* Pack Set Name */}
-                            <div className="h-16 border-b border-black flex justify-between">
-                                <div className="font-medium">
-                                    Booster Pack
-                                    - Adventure on Kami's Island
-                                    [OP15-EB04]<br />
+                            <div className="border-b pb-2 flex justify-between">
+                                <div className="flex-1 text-sm font-semibold">
+                                    BOOSTER PACK<br />
+                                    - ADVENTURE ON KAMI'S ISLAND<br />
+                                    [OP15-EB04]
                                 </div>
-                                <div className="w-8 flex justify-center items-center shrink-0"><i className='bx bxs-down-arrow'></i></div>
+                                <div className="w-5 flex justify-center items-center shrink-0"><i className='bx bxs-down-arrow'></i></div>
                             </div>
 
 
                             {/* Add More Button */}
-                            <div className="flex items-center">
-                                <div className="relative h-2/3 w-full bg-black flex justify-center items-center rounded-3xl">
-                                    <div className="font-semibold text-white">Add more</div>
-                                    <div className="absolute right-4 h-full flex justify-center items-center"><i className='bx bx-plus text-xl text-white' ></i></div>
-                                </div>
+                            <div className="relative h-10 w-full bg-black flex justify-center items-center text-white rounded-3xl">
+                                <div className="font-semibold">Add more</div>
+                                <div className="absolute right-4 flex items-center"><i className='bx bx-plus text-xl' ></i></div>
                             </div>
 
                             {/* Checkbox */}
-                            <div className="h-8 flex items-center">
+                            <div className="flex items-center gap-1">
                                 <div className="border-2 h-5 w-5"></div>
-                                <div className="text-sm font-medium ml-1">Hide reprint cards</div>
+                                <div className="text-[13px] font-semibold tracking-tight">Hide reprint cards</div>
                             </div>
 
 
                             {/* Search Button */}
-                            <div className="flex items-center">
-                                <div className="relative h-2/3 w-full bg-yellow-700 flex justify-center items-center rounded-3xl">
-                                    <div className="font-semibold text-white">Add more</div>
-                                    <div className="absolute right-4 h-full flex justify-center items-center"><i className='bx bx-search text-xl text-white' ></i></div>
-                                </div>
+                            <div className="relative h-10 bg-yellow-700 flex justify-center items-center text-white rounded-3xl">
+                                <div className="font-semibold">Search</div>
+                                <div className="absolute right-4 flex items-center"><i className='bx bx-search text-xl' ></i></div>
                             </div>
 
                         </div>
                     </div>
 
                     {/* Search Results Arrows */}
-                    <div className="border h-14"></div>
+                    <div className="mt-5 flex justify-between items-center">
+                        <div className="flex gap-1.5">
+                            <div className="border flex items-center px-2 gap-1 bg-white text-xs font-bold rounded-xl "><span className="font-light text-[11px]">X</span> Clear</div>
+                            <div className="font-bold">196 Results</div>
+                        </div>
+
+                        <div className="h-8 flex justify-between items-center bg-white">
+                            <button className="border-r w-12 flex justify-center items-center"><i className='bx bxs-left-arrow text-gray-400 text-sm' ></i></button>
+                            <div className="w-12 flex justify-center items-center text-xs font-bold">1/11</div>
+                            <button className="border-l w-12 flex justify-center items-center"><i className='bx bxs-right-arrow text-black text-sm' ></i></button>
+                        </div>
+                    </div>
 
                     {/* Cards Grid */}
-                    <div className="h-[850px] grid grid-cols-3 gap-3">
-                        {Array.from({length: 15}).map((_, index) => {
-                            return <div key={index} className="border rounded-md"></div>
+                    <div className="mt-4 grid grid-cols-3 gap-3">
+                        {Array.from({length: 18}).map((_, index) => {
+                            return <div key={index} className="border h-36 rounded-md"></div>
                         })}
                     </div>
                     
                     {/* Page Selector */}
-                    <div className="relative h-10 mt-8 flex justify-center items-center bg-white rounded-md shadow">
+                    <div className="relative h-10 mt-6 flex justify-center items-center bg-white shadow">
                         <button className="border-r border-gray-800 absolute left-3 h-4 w-8 flex justify-start items-center"><i className='bx bxs-left-arrow text-gray-400 text-sm' ></i></button>
                         <div className="text-xs font-semibold">1/11</div>
                         <button className="border-l border-gray-800 absolute right-3 h-4 w-8 flex justify-end items-center"><i className='bx bxs-right-arrow text-zinc-900 text-sm' ></i></button>
                     </div>
 
-                    {/* Image */}
-                    <div className="border-4 border-yellow-500 h-32 mt-18 flex justify-around items-center bg-blue-950">
-                        <div className="h-24 w-36 bg-white flex justify-center items-center">Ad#1</div>
-                        <div className="h-24 w-36 bg-white flex justify-center items-center">Ad#2</div>
+                    {/* Advertisement Placements */}
+                    <div className="border-4 border-yellow-500 h-32 max-w-6xl p-4 mt-16 flex gap-5 bg-blue-950">
+                        <div className="flex-1 bg-white flex justify-center items-center">Ad# 1</div>
+                        <div className="flex-1 bg-white flex justify-center items-center">Ad# 2</div>
                     </div>
 
                     {/* Splash Art */}
-                    <div className="border h-96 mt-16 flex justify-center items-center">Luffy Splash Art</div>
+                    <div className="border h-96 mt-16 -mx-3 flex justify-center items-center">Luffy Splash Art</div>
 
                     {/* Footer */}
                     <div className="border h-auto m-w-6xl p-4 bg-blue-950 text-white">
-                    {/* <div className="border min-h-96 p-5"> */}
 
                         {/* Social Media */}
                         <div className="w-55 flex justify-around items-center">
@@ -140,13 +145,12 @@ function FindCardsPage(){
                             {footerInfo.map((data, index) => {
                                 return <div key={index} className={`${index === 7 ? "" : "border-b-2 border-blue-600"} h-12 mt-1 flex justify-between items-center`}>
                                             <div className="flex items-start gap-3">
-                                                <div className={`${index === 0 || index === 2 ? `border` : ``} h-6 w-6 flex justify-center rounded-full`}><i className={`bx ${data.icon} text-xl`} ></i></div>
-                                                {/* <div className="h-6 w-6 flex justify-center items-center rounded-full"><i className={`bx ${data.icon} text-xl`} ></i></div> */}
+                                                <div className={`${index === 0 || index === 2 ? `border` : ``} h-5 w-5 flex justify-center items-center rounded-full`}><i className={`bx ${data.icon} text-xl`} ></i></div>
                                                 <div className="text-sm">{data.text}</div>
                                             </div>
                                             {data.plusSign 
                                                 ? 
-                                                <div className="h-6 w-6 flex justify-center items-center bg-gray-900 rounded-full"><i className='bx bx-plus text-xl' ></i></div>
+                                                <div className="h-5 w-5 flex justify-center items-center bg-gray-900 rounded-full"><i className='bx bx-plus text-xl' ></i></div>
                                                 : 
                                                 ""
                                             }
