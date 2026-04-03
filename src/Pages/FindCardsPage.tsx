@@ -56,38 +56,38 @@ function FindCardsPage(){
 
                     {/* Logo */} 
                     <div className="flex flex-col items-center shrink-0"> 
-                        <div className="font-medium text-sm xl:text-2xl 2xl:text-4xl">ONE PIECE</div> 
-                        <div className="font-light text-[8px] xl:text-xs 2xl:text-lg">CARD GAME</div> 
+                        <div className="font-medium text-sm xl:text-2xl 2xl:text-3xl">ONE PIECE</div> 
+                        <div className="font-light text-[8px] xl:text-xs 2xl:text-base">CARD GAME</div> 
                     </div> 
 
                     {/* Dropdowns NAV */}
-                    <div className="flex gap-2.5 xl:gap-4 2xl:gap-8">
+                    <div className="flex gap-2.5 xl:gap-4">
                         {headerNavData.map((data, index) => {
-                            return <div key={index} className="flex gap-1 xl:gap-2 2xl:gap-4 items-center shrink-0">
-                                        <div className={`${index === 0 || index === 2 ? "border 2xl:h-8 2xl:w-8" : ""} flex justify-center items-center rounded-full`}><i className={`${data.icon} xl:text-xl 2xl:text-3xl`} ></i></div>
-                                        <div className="text-[9px] xl:text-xs 2xl:text-lg font-medium 2xl:font-semibold">{data.text}</div>
-                                        {data.dropdownArrow ? (<i className='bx bxs-down-arrow text-[8px] 2xl:text-xs' ></i>) : ""}
+                            return <div key={index} className="flex gap-1 xl:gap-2 2xl:gap-3 items-center shrink-0">
+                                        <div className={`${index === 0 || index === 2 ? "border 2xl:h-6 2xl:w-6" : ""} flex justify-center items-center rounded-full`}><i className={`${data.icon} xl:text-xl 2xl:text-2xl`} ></i></div>
+                                        <div className="text-[9px] xl:text-xs 2xl:text-sm font-medium">{data.text}</div>
+                                        {data.dropdownArrow ? (<i className='bx bxs-down-arrow text-[8px] 2xl:text-[10px]' ></i>) : ""}
                                     </div>
                         })}
                     </div>
 
                     {/* Search Bar */}
-                    <form className="px-2 xl:px-3.5 2xl:px-5 py-0.5 xl:py-1 2xl:py-1.5 flex items-center bg-gray-200 rounded-2xl">
-                        <input type="text" placeholder="Search for cards" className="w-20 xl:w-32 2xl:w-40 text-[9px] xl:text-xs 2xl:text-base font-medium" />
-                        <i className='bx bx-search text-xs 2xl:text-xl' ></i>
+                    <form className="px-2 xl:px-3.5 2xl:px-4 py-0.5 xl:py-1 2xl:py-1.5 flex items-center bg-gray-200 rounded-2xl">
+                        <input type="text" placeholder="Search for cards" className="w-20 xl:w-32 2xl:w-40 text-[9px] xl:text-xs 2xl:text-sm font-medium" />
+                        <i className='bx bx-search text-xs 2xl:text-base' ></i>
                     </form>
 
                     {/* Language Settings */}
                     <div className="flex gap-1 items-center">
-                        <i className='bx bx-world text-xs xl:text-xl' ></i>
-                        <div className="font-normal text-[8px] xl:text-xs">English</div>
-                        <div className="text-[7px] xl:text-[10px]">- NA/EU/OC/LATAM/ME</div>
-                        <i className='bx bxs-down-arrow text-[6px] xl:text-[8px]' ></i>
+                        <i className='bx bx-world text-xs xl:text-xl 2xl:text-2xl' ></i>
+                        <div className="font-normal text-[8px] xl:text-xs 2xl:text-base">English</div>
+                        <div className="text-[7px] xl:text-[10px] 2xl:text-xs">- NA/EU/OC/LATAM/ME</div>
+                        <i className='bx bxs-down-arrow text-[6px] xl:text-[8px] 2xl:text-[10px]' ></i>
                     </div>
 
-                    <div className="flex gap-2 xl:gap-3">
-                        <i className='bx bxl-youtube xl:text-2xl' ></i>
-                        <i className='bx bxl-twitter xl:text-2xl' ></i>
+                    <div className="flex gap-2 xl:gap-3 2xl:gap-5">
+                        <i className='bx bxl-youtube xl:text-2xl 2xl:text-4xl' ></i>
+                        <i className='bx bxl-twitter xl:text-2xl 2xl:text-4xl' ></i>
                     </div>
 
 
