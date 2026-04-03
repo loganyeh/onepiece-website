@@ -121,19 +121,19 @@ function FindCardsPage(){
                         <div className="flex flex-col gap-5">
 
                             {/* Search */}
-                            <div className="border-b w-full pb-1 flex justify-between items-center">
+                            <div className="border-b pb-1 flex justify-between">
                                 <div className="text-sm text-gray-400 font-semibold tracking-wide">Search ...</div>
-                                <div className="flex justify-center items-center"><i className='bx bx-search text-xl text-zinc-800'></i></div>
+                                <i className='bx bx-search text-xl text-zinc-800'></i>
                             </div>
 
                             {/* Pack Set Name */}
-                            <div className="border-b pb-2 flex justify-between">
+                            <div className="border-b pb-2 flex justify-between items-center">
                                 <div className="flex-1 text-sm font-semibold">
                                     BOOSTER PACK<br />
                                     - ADVENTURE ON KAMI'S ISLAND<br />
                                     [OP15-EB04]
                                 </div>
-                                <div className="w-5 flex justify-center items-center shrink-0"><i className='bx bxs-down-arrow'></i></div>
+                                <i className='bx bxs-down-arrow w-6 shrink-0'></i>
                             </div>
 
                             {/* Add More Button */}
