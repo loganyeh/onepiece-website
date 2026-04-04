@@ -324,35 +324,35 @@ function FindCardsPage(){
                 <div className="h-96 mt-16 flex justify-center items-center bg-amber-100">Luffy Splash Art</div>
 
                 {/* Footer */}
-                <div className="m-w-6xl p-4 flex flex-col gap-4 bg-blue-950 text-white">
+                <div className="m-w-6xl p-4 md:p-10 flex flex-col gap-4 md:gap-8 bg-blue-950 text-white">
 
                     {/* Social Media */}
-                    <div className="flex gap-4">
-                        <i className='bx bxl-facebook-circle text-5xl' />
-                        <i className='bx bxl-twitter text-5xl' />
-                        <i className='bx bxl-youtube text-5xl' />
+                    <div className="flex gap-4 md:gap-16 text-5xl md:text-8xl">
+                        <i className='bx bxl-facebook-circle' />
+                        <i className='bx bxl-twitter' />
+                        <i className='bx bxl-youtube' />
                     </div>
 
                     {/* Language */}
-                    <div className="w-fit px-4 py-1 bg-gray-900 rounded-3xl flex gap-1.5 items-center">
-                        <i className='bx bx-world text-3xl' ></i>
-                        <div className="font-light">English</div>
-                        <div className="text-xs tracking-wider">- NA/EU/OC/LATAM/ME</div>
-                        <i className='bx bxs-down-arrow text-lg' ></i>
+                    <div className="w-fit px-4 md:px-8 py-1 md:py-3.5 bg-gray-900 rounded-3xl md:rounded-full flex gap-1.5 md:gap-5 items-center">
+                        <i className='bx bx-world text-3xl md:text-5xl' ></i>
+                        <div className="font-light md:text-3xl">English</div>
+                        <div className="text-xs md:text-2xl tracking-wider">- NA/EU/OC/LATAM/ME</div>
+                        <i className='bx bxs-down-arrow text-lg md:text-2xl' ></i>
                     </div>
 
                     {/* Extra Info */}
-                    <div className="flex gap-1 flex-col"> 
+                    <div className="flex gap-1 md:gap-2 flex-col"> d
                         {footerInfo.map((data, index) => {
                             // return <div key={index} className={`${index === 7 ? "" : "border-b-2 border-blue-600"} h-12 mt-1 flex justify-between items-center`}>
-                            return <div key={index} className={`${index === 7 ? "" : "border-b-2 border-blue-600"} py-3 flex justify-between items-center`}>
-                                        <div className="flex gap-3">
-                                            <div className={`${index === 0 || index === 2 ? `border` : ``} h-5 w-5 flex justify-center items-center rounded-full`}><i className={`bx ${data.icon} text-xl`} ></i></div>
-                                            <div className="text-sm">{data.text}</div>
+                            return <div key={index} className={`${index === 7 ? "" : "border-b-2 md:border-b-4 border-blue-600"} py-3 md:py-6 flex justify-between items-center`}>
+                                        <div className="flex gap-3 md:gap-8">
+                                            <div className={`${index === 0 || index === 2 ? `border` : ``} h-5 w-5 md:p-5 flex justify-center items-center rounded-full`}><i className={`bx ${data.icon} text-xl md:text-5xl`} ></i></div>
+                                            <div className="text-sm md:text-3xl">{data.text}</div>
                                         </div>
                                         {data.plusSign 
                                             ? 
-                                            <i className='bx bx-plus p-0.5 bg-gray-900 text-xl rounded-full' ></i>
+                                            <i className='bx bx-plus p-0.5 md:p-2 bg-gray-900 text-xl md:text-4xl rounded-full' ></i>
                                             : 
                                             ""
                                         }
@@ -361,19 +361,19 @@ function FindCardsPage(){
                     </div>
                     
                     {/* Fint Print */}
-                    <div className="flex gap-6">
-                        <div className="text-[10px]">FOR INQUIRES</div>
-                        <div className="text-[10px]">COOKIE POLICY</div>
+                    <div className="flex gap-6 md:gap-10 text-[10px] md:text-xl">
+                        <div>FOR INQUIRES</div>
+                        <div>COOKIE POLICY</div>
                     </div>
 
                     {/* Logo */}
-                    <div className="w-fit mt-4 flex flex-col items-center">
-                        <div className="text-4xl font-medium">ONE PIECE</div>
-                        <div className="text-lg font-extralight">Card Game</div>
+                    <div className="w-fit mt-4 md:mt-8 flex flex-col items-center">
+                        <div className="text-4xl md:text-7xl font-medium">ONE PIECE</div>
+                        <div className="text-lg md:text-4xl font-extralight md:font-thin md:tracking-widest">Card Game</div>
                     </div>
 
                     {/* Copyright */}
-                    <div className="flex flex-col gap-5 text-[10px] mt-2 leading-loose">
+                    <div className="mt-2 md: mt-4 flex flex-col gap-5 md:gap-10 md:font-light md:tracking-wide text-[10px] md:text-xl leading-loose">
                         <div>
                             ©Eiichiro Oda/Shueisha<br /> 
                             ©Eiichiro Oda/Shueisha, Toei Animation
@@ -392,11 +392,11 @@ function FindCardsPage(){
                     </div>
 
                     {/* Trademarks */}
-                    <div className="mt-3 flex gap-2">
-                        <i className='bx bxl-imdb text-4xl'></i>
-                        <i className='bx bxl-microsoft text-4xl'></i>
-                        <i className='bx bxl-adobe text-4xl'></i>
-                        <i className='bx bxl-slack text-4xl'></i>
+                    <div className="mt-3 md:mt-6 flex gap-3 text-4xl md:text-7xl">
+                        <i className='bx bxl-imdb'></i>
+                        <i className='bx bxl-microsoft'></i>
+                        <i className='bx bxl-adobe'></i>
+                        <i className='bx bxl-slack'></i>
                     </div>
 
                 </div>
