@@ -1,6 +1,6 @@
 
 
-function CardList(){
+function CardListTitle(){
 
     return(
         <>
@@ -20,4 +20,4 @@ function CardList(){
     )
 }
 
-export default CardList;
+export default CardListTitle;

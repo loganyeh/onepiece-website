@@ -1,5 +1,5 @@
 import HeaderFindCardsPage from "../Components/FindCardsPageComps/HeaderFindCardsPage";
-import CardList from "../Components/FindCardsPageComps/CardList";
+import CardListTitle from "../Components/FindCardsPageComps/CardListTitle";
 import FilterSearch from "../Components/FindCardsPageComps/FilterSearch";
 import TopPageSelector from "../Components/FindCardsPageComps/TopPageSelector";
 import CardsGrid from "../Components/FindCardsPageComps/CardsGrid";
@@ -8,7 +8,20 @@ import AdBox from "../Components/FindCardsPageComps/AdBox";
 import Footer from "../Components/FindCardsPageComps/ShellFindCardsPage/Footer";
 import SplashArt from "../Components/FindCardsPageComps/SplashArt";
 
+// import { useState, useEffect } from "react";
+// import { fetchCards } from "../API/apiFindCardsPage";
+
 function FindCardsPage(){
+    // const [cardsData, setCardsData] = useState();
+
+    // useEffect(() => {
+    //     async function getCards(){
+    //         const data = await fetchCards();
+    //         setCardsData(data);
+    //     }
+
+    //     getCards();
+    // }, []);
 
     return(
         <>
@@ -27,7 +40,7 @@ function FindCardsPage(){
                 {/* Page Container */}
                 <div className="min-h-screen max-w-6xl mx-auto px-3 lg:px-0 xl:px-14">
 
-                    <CardList />
+                    <CardListTitle />
 
                     {/* Filter Search */}
                     <FilterSearch />
