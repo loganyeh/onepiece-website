@@ -321,37 +321,38 @@ function FindCardsPage(){
                 </div>
 
                 {/* Splash Art */}
-                <div className="border h-96 mt-16 flex justify-center items-center">Luffy Splash Art</div>
+                <div className="h-96 mt-16 flex justify-center items-center bg-amber-100">Luffy Splash Art</div>
 
                 {/* Footer */}
-                <div className="border h-auto m-w-6xl p-4 bg-blue-950 text-white">
+                <div className="m-w-6xl p-4 flex flex-col gap-4 bg-blue-950 text-white">
 
                     {/* Social Media */}
-                    <div className="w-55 flex justify-around items-center">
+                    <div className="flex gap-4">
                         <i className='bx bxl-facebook-circle text-5xl' />
                         <i className='bx bxl-twitter text-5xl' />
                         <i className='bx bxl-youtube text-5xl' />
                     </div>
 
                     {/* Language */}
-                    <div className="h-10 w-[296px] mt-4 px-4 py-1 bg-gray-900 rounded-3xl flex justify-between items-center">
+                    <div className="w-fit px-4 py-1 bg-gray-900 rounded-3xl flex gap-1.5 items-center">
                         <i className='bx bx-world text-3xl' ></i>
-                        <div className="font-normal">English</div>
+                        <div className="font-light">English</div>
                         <div className="text-xs tracking-wider">- NA/EU/OC/LATAM/ME</div>
                         <i className='bx bxs-down-arrow text-lg' ></i>
                     </div>
 
                     {/* Extra Info */}
-                    <div className="mt-4"> 
+                    <div className="flex gap-1 flex-col"> 
                         {footerInfo.map((data, index) => {
-                            return <div key={index} className={`${index === 7 ? "" : "border-b-2 border-blue-600"} h-12 mt-1 flex justify-between items-center`}>
-                                        <div className="flex items-start gap-3">
+                            // return <div key={index} className={`${index === 7 ? "" : "border-b-2 border-blue-600"} h-12 mt-1 flex justify-between items-center`}>
+                            return <div key={index} className={`${index === 7 ? "" : "border-b-2 border-blue-600"} py-3 flex justify-between items-center`}>
+                                        <div className="flex gap-3">
                                             <div className={`${index === 0 || index === 2 ? `border` : ``} h-5 w-5 flex justify-center items-center rounded-full`}><i className={`bx ${data.icon} text-xl`} ></i></div>
                                             <div className="text-sm">{data.text}</div>
                                         </div>
                                         {data.plusSign 
                                             ? 
-                                            <div className="h-5 w-5 flex justify-center items-center bg-gray-900 rounded-full"><i className='bx bx-plus text-xl' ></i></div>
+                                            <i className='bx bx-plus p-0.5 bg-gray-900 text-xl rounded-full' ></i>
                                             : 
                                             ""
                                         }
@@ -360,25 +361,25 @@ function FindCardsPage(){
                     </div>
                     
                     {/* Fint Print */}
-                    <div className="h-6 mt-4 flex justify-start gap-4">
+                    <div className="flex gap-6">
                         <div className="text-[10px]">FOR INQUIRES</div>
                         <div className="text-[10px]">COOKIE POLICY</div>
                     </div>
 
                     {/* Logo */}
-                    <div className="mt-6">
+                    <div className="w-fit mt-4 flex flex-col items-center">
                         <div className="text-4xl font-medium">ONE PIECE</div>
-                        <div className="ml-12 text-lg font-extralight">Card Game</div>
+                        <div className="text-lg font-extralight">Card Game</div>
                     </div>
 
                     {/* Copyright */}
-                    <div className="text-[10px] mt-6 leading-loose">
+                    <div className="flex flex-col gap-5 text-[10px] mt-2 leading-loose">
                         <div>
                             ©Eiichiro Oda/Shueisha<br /> 
                             ©Eiichiro Oda/Shueisha, Toei Animation
                         </div>
 
-                        <div className="mt-6 leading-loose">
+                        <div className="leading-loose">
                             All images, text and data on this website may not be reproduced<br />
                             without permission.<br />
                             Please note that the images used on this website may differ from<br /> 
@@ -391,7 +392,7 @@ function FindCardsPage(){
                     </div>
 
                     {/* Trademarks */}
-                    <div className="h-10 mt-6 flex gap-2">
+                    <div className="mt-3 flex gap-2">
                         <i className='bx bxl-imdb text-4xl'></i>
                         <i className='bx bxl-microsoft text-4xl'></i>
                         <i className='bx bxl-adobe text-4xl'></i>
