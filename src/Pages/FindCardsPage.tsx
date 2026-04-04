@@ -327,53 +327,50 @@ function FindCardsPage(){
                 <div className="m-w-6xl p-4 md:p-10 flex flex-col gap-4 md:gap-8 bg-blue-950 text-white">
 
                     {/* Social Media */}
-                    <div className="flex gap-4 md:gap-16 text-5xl md:text-8xl">
+                    <div className="border flex gap-4 md:gap-16 lg:gap-4 text-5xl md:text-8xl lg:text-3xl">
                         <i className='bx bxl-facebook-circle' />
                         <i className='bx bxl-twitter' />
                         <i className='bx bxl-youtube' />
                     </div>
 
                     {/* Language */}
-                    <div className="w-fit px-4 md:px-8 py-1 md:py-3.5 bg-gray-900 rounded-3xl md:rounded-full flex gap-1.5 md:gap-5 items-center">
-                        <i className='bx bx-world text-3xl md:text-5xl' ></i>
-                        <div className="font-light md:text-3xl">English</div>
-                        <div className="text-xs md:text-2xl tracking-wider">- NA/EU/OC/LATAM/ME</div>
-                        <i className='bx bxs-down-arrow text-lg md:text-2xl' ></i>
+                    <div className="border w-fit px-4 md:px-8 lg:px-3 py-1 md:py-3.5 lg:py-1 bg-gray-900 rounded-3xl md:rounded-full flex gap-1.5 md:gap-5 lg:gap-1.5 items-center">
+                        <i className='bx bx-world text-3xl md:text-5xl lg:text-xl' ></i>
+                        <div className="font-light md:text-3xl lg:text-sm">English</div>
+                        <div className="text-xs md:text-2xl lg:text-[10px] tracking-wider">- NA/EU/OC/LATAM/ME</div>
+                        <i className='bx bxs-down-arrow text-lg md:text-2xl lg:text-[10px]' ></i>
                     </div>
 
                     {/* Extra Info */}
-                    <div className="flex gap-1 md:gap-2 flex-col"> d
+                    <div className="border flex gap-1 md:gap-2 flex-col lg:grid lg:grid-cols-3"> 
                         {footerInfo.map((data, index) => {
                             // return <div key={index} className={`${index === 7 ? "" : "border-b-2 border-blue-600"} h-12 mt-1 flex justify-between items-center`}>
-                            return <div key={index} className={`${index === 7 ? "" : "border-b-2 md:border-b-4 border-blue-600"} py-3 md:py-6 flex justify-between items-center`}>
-                                        <div className="flex gap-3 md:gap-8">
-                                            <div className={`${index === 0 || index === 2 ? `border` : ``} h-5 w-5 md:p-5 flex justify-center items-center rounded-full`}><i className={`bx ${data.icon} text-xl md:text-5xl`} ></i></div>
-                                            <div className="text-sm md:text-3xl">{data.text}</div>
+                            return <div key={index} className={`${index === 7 ? "" : "border-b-2 md:border-b-4 lg:border border-blue-600"} py-3 md:py-6 flex justify-between lg:justify-start lg:w-fit items-center`}>
+                                        <div className="flex gap-3 md:gap-8 lg:gap-3">
+                                            <div className={`${index === 0 || index === 2 ? `border` : ``} h-5 w-5 md:p-5 lg:p-0 flex justify-center items-center rounded-full`}><i className={`bx ${data.icon} text-xl md:text-5xl lg:text-xl`} ></i></div>
+                                            <div className="text-sm md:text-3xl lg:text-sm">{data.text}</div>
                                         </div>
-                                        {data.plusSign 
-                                            ? 
-                                            <i className='bx bx-plus p-0.5 md:p-2 bg-gray-900 text-xl md:text-4xl rounded-full' ></i>
-                                            : 
-                                            ""
+                                        {data.plusSign && (
+                                            <i className='bx bx-plus p-0.5 md:p-2 bg-gray-900 lg:bg-blue-950 text-xl md:text-4xl lg:text-blue-950 rounded-full' ></i>)
                                         }
                                     </div>
                         })}
                     </div>
                     
                     {/* Fint Print */}
-                    <div className="flex gap-6 md:gap-10 text-[10px] md:text-xl">
+                    <div className="border flex gap-6 md:gap-10 lg:gap-6 text-[10px] md:text-xl lg:text-[10px] lg:font-light">
                         <div>FOR INQUIRES</div>
                         <div>COOKIE POLICY</div>
                     </div>
 
                     {/* Logo */}
-                    <div className="w-fit mt-4 md:mt-8 flex flex-col items-center">
+                    <div className="border w-fit mt-4 md:mt-8 flex flex-col items-center">
                         <div className="text-4xl md:text-7xl font-medium">ONE PIECE</div>
                         <div className="text-lg md:text-4xl font-extralight md:font-thin md:tracking-widest">Card Game</div>
                     </div>
 
                     {/* Copyright */}
-                    <div className="mt-2 md: mt-4 flex flex-col gap-5 md:gap-10 md:font-light md:tracking-wide text-[10px] md:text-xl leading-loose">
+                    <div className="border mt-2 md:mt-4 flex flex-col gap-5 md:gap-10 md:font-light md:tracking-wide text-[10px] md:text-xl lg:text-[10px] leading-loose">
                         <div>
                             ©Eiichiro Oda/Shueisha<br /> 
                             ©Eiichiro Oda/Shueisha, Toei Animation
@@ -392,7 +389,7 @@ function FindCardsPage(){
                     </div>
 
                     {/* Trademarks */}
-                    <div className="mt-3 md:mt-6 flex gap-3 text-4xl md:text-7xl">
+                    <div className="border mt-3 md:mt-6 flex gap-3 text-4xl md:text-7xl lg:text-4xl">
                         <i className='bx bxl-imdb'></i>
                         <i className='bx bxl-microsoft'></i>
                         <i className='bx bxl-adobe'></i>
