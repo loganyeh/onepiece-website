@@ -1,4 +1,4 @@
-import HeaderFindCardsPage from "../Components/FindCardsPageComps/HeaderFindCardsPage";
+import Header from "../Components/FindCardsPageComps/Header";
 import CardListTitle from "../Components/FindCardsPageComps/CardListTitle";
 import FilterSearch from "../Components/FindCardsPageComps/FilterSearch";
 import TopPageSelector from "../Components/FindCardsPageComps/TopPageSelector";
@@ -8,27 +8,31 @@ import AdBox from "../Components/FindCardsPageComps/AdBox";
 import Footer from "../Components/FindCardsPageComps/ShellFindCardsPage/Footer";
 import SplashArt from "../Components/FindCardsPageComps/SplashArt";
 
-// import { useState, useEffect } from "react";
-// import { fetchCards } from "../API/apiFindCardsPage";
+// testing api
+import { fetchCardSetID } from "../API/apiFindCardsPage";
+import type { CardSetID } from "../API/apiFindCardsPage";
+import { useState, useEffect } from "react";
 
 function FindCardsPage(){
-    // const [cardsData, setCardsData] = useState();
+    const [cardSetId, setCardSetIdData] = useState<CardSetID[]>([]);
 
+    // disable api request for now
+    // ** working was able to get the data
     // useEffect(() => {
-    //     async function getCards(){
-    //         const data = await fetchCards();
-    //         setCardsData(data);
+    //     async function getCardSetID(){
+    //         const data: CardSetID[] = await fetchCardSetID();
+    //         setCardSetIdData(data);
     //     }
 
-    //     getCards();
-    // }, []);
+    //     getCardSetID();
+    // }, [])
 
     return(
         <>
             <div className="min-h-screen bg-gray-50">
 
                 {/* Header */}
-                <HeaderFindCardsPage />
+                <Header />
 
                 {/* Home -> Card List @ Breakpoint XL */}
                 <div className="hidden px-6 xl:flex mt-8 2xl:mt-4 items-center gap-3 text-amber-500 font-medium text-sm">

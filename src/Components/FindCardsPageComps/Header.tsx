@@ -5,7 +5,7 @@ type HeaderDM = {
     dropdownArrow: boolean;
 }
 
-function HeaderFindCardsPage(){
+function Header(){
     const headerNavData: HeaderDM[] = [
         {icon: `bx bx-question-mark`, text: "FOR BEGINNERS", dropdownArrow: true},
         {icon: `bx bxs-book-alt`, text: "RULES", dropdownArrow: true},
@@ -77,4 +77,4 @@ function HeaderFindCardsPage(){
     )
 }
 
-export default HeaderFindCardsPage;
+export default Header;
