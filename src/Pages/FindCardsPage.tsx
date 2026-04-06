@@ -9,24 +9,10 @@ import Footer from "../Components/FindCardsPageComps/ShellFindCardsPage/Footer";
 import SplashArt from "../Components/FindCardsPageComps/SplashArt";
 
 // testing api
-import { fetchCardSetID } from "../API/apiFindCardsPage";
-import type { CardSetID } from "../API/apiFindCardsPage";
 import { useState, useEffect } from "react";
 import CardInfoPreview from "../Components/FindCardsPageComps/CardInfoPreview";
 
 function FindCardsPage(){
-    const [cardSetId, setCardSetIdData] = useState<CardSetID[]>([]);
-
-    // disable api request for now
-    // ** working was able to get the data
-    // useEffect(() => {
-    //     async function getCardSetID(){
-    //         const data: CardSetID[] = await fetchCardSetID();
-    //         setCardSetIdData(data);
-    //     }
-
-    //     getCardSetID();
-    // }, [])
 
     return(
         <>

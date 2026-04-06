@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchCardSetID, fetchCards } from "../../API/apiFindCardsPage";
-import type { CardSetID, CardImage } from "../../API/apiFindCardsPage";
+import type { CardImage } from "../../API/apiFindCardsPage";
 
 type CardStatsCategories = {
     stat: string;
@@ -8,50 +8,36 @@ type CardStatsCategories = {
 }
 
 function CardInfoPreview(){
-    const [cardSetId, setCardSetIdData] = useState<CardSetID[]>([]);
+    // const [cardSetId, setCardSetIdData] = useState<CardImage[]>([]);
+    const [isCardPreview, setIsCardPreview] = useState(true);
+    const [cardData, setCardData] = useState<CardImage[]>([]);
     const cardInfoPreviewBaseStatsData: CardStatsCategories[] = [
-        { stat: "Life", value: `${cardSetId[0]?.life || "4"}` },
-        { stat: "Attribute", value: `${cardSetId[0]?.attribute || "Special"}` },
-        { stat: "Power", value: `${cardSetId[0]?.card_power || "5000"}` },
-        { stat: "Counter", value: `${cardSetId[0]?.counter_amount || "-"}` },
-        { stat: "Color", value: `${cardSetId[0]?.card_color || "Red/Yellow"}` },
+        { stat: "Life", value: `${cardData[0]?.life || "4"}` },
+        { stat: "Attribute", value: `${cardData[0]?.attribute || "Special"}` },
+        { stat: "Power", value: `${cardData[0]?.card_power || "5000"}` },
+        { stat: "Counter", value: `${cardData[0]?.counter_amount || "-"}` },
+        { stat: "Color", value: `${cardData[0]?.card_color || "Red/Yellow"}` },
         { stat: "Block icon", value: `${"-"}` },
-        { stat: "Type", value: `${cardSetId[0]?.card_type || "Egghead/Bonney Pirates"}` },
+        { stat: "Type", value: `${cardData[0]?.card_type || "Egghead/Bonney Pirates"}` },
         { stat: "empty stat", value: "empty value" },
-    ]
+    ];
     const baseEffectData = `[Opponent's Turn] If you have 1 or less Life cards, this Leader gains +2000 power.
     [Activate: Main] [Once Per Turn] Give up to 1 of your opponent's Characters −1000 power during this turn. Then, if you have 2 or more Life cards, you may add 1 card from the top of your Life cards to your hand.`;
-    const [isCardPreview, setIsCardPreview] = useState(true);
-    // const [cardSetId, setCardSetIdData] = useState<CardSetID[]>([]);
-    const [cardData, setCardData] = useState<CardImage[]>([]);
 
+    // api working and all its data is in the right place  √√√
      useEffect(() => {
         async function getCardSetID(){
-            // const data: CardSetID[] = await fetchCardSetID();
-            // setCardSetIdData(data);
+            // const data: CardImage[] = await fetchCardSetID();
+            // setCardData(data);
         }
 
         getCardSetID();
     }, [])
 
-    // useEffect(() => {
-    //     async function getCard(){
-    //         const data = await fetchCards();
-    //         setCardData(data);
-    //     }
-
-    //     // getCard();
-    // })
-
-    // function onClickExit(){
-    //     setIsCardPreview(false);
-    // }
-
     return(
         <>
             {/* Card Preview */}
             <div className={`${isCardPreview ? `fixed` : `hidden`} top-0 p-3 md:px-4 flex justify-center items-center md:items-start lg:items-center inset-0 bg-amber-200/40 md:scroll-auto md:overflow-y-auto`}>
-            {/* <div className="fixed border-2 border-red-600 inset-0 bg-amber-200/40"> */}
 
                 {/* Exit X */}
                 <i onClick={() => setIsCardPreview(false)} className={`bx bx-x 
@@ -87,9 +73,7 @@ function CardInfoPreview(){
                             lg:text-center
                             font-bold text-lg md:text-4xl
                         ">
-                            {/* Jewlery Bonney */}
-                            {/* {cardSetId[0]?.card_name} */}
-                            {cardSetId[0]?.card_name || "Jewlery Bonney"}
+                            {cardData[0]?.card_name || "Jewlery Bonney"}
                         </div>
 
                     </div>
@@ -100,8 +84,9 @@ function CardInfoPreview(){
                         p-5 md:p-12 lg:p-8
                     ">
                         {/* Card Image */}
-                        {/* <div className="aspect-[3/4.25] md:aspect-3/4 bg-blue-300 bg-center bg-cover rounded-3xl" style={{ backgroundImage: `url(${ `${cardSetId[0]?.card_image}` || `/images/fallbackCardPreview.png`})`}}></div> */}
-                        <div className="aspect-[3/4.25] md:aspect-3/4 bg-blue-300 bg-center bg-cover rounded-3xl" style={{ backgroundImage: `url(${`/images/fallbackCardPreview.png`})`}}></div>
+                        <div className="aspect-[3/4.25] md:aspect-3/4 bg-blue-300 bg-center bg-cover rounded-3xl" style={{ backgroundImage: `url(${cardData[0]?.card_image || "/images/fallbackCardPreview.png"})`}}></div>
+
+                        {/* <div className="aspect-[3/4.25] md:aspect-3/4 bg-blue-300 bg-center bg-cover rounded-3xl" style={{ backgroundImage: `url(${`/images/fallbackCardPreview.png`})`}}></div> */}
 
                         {/* Card Info & Stats */}
                         <div className="hidden lg:flex flex-col gap-4">
@@ -122,12 +107,12 @@ function CardInfoPreview(){
 
                             <div>
                                 <div className="font-bold">Effect</div>
-                                <div className="font-light">{baseEffectData}</div>
+                                <div className="font-light">{ cardData[0]?.card_text || baseEffectData}</div>
                             </div>
 
                             <div className="p-2 bg-gray-100 rounded">
                                 <div className="font-bold">Card Set(s)</div>
-                                <div className="font-light text-sm">-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]</div>
+                                <div className="font-light text-sm">{ cardData[0]?.set_name || "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"}</div>
                             </div>
 
                         </div>
