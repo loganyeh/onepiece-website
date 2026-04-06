@@ -14,6 +14,8 @@ import CardInfoPreview from "../Components/FindCardsPageComps/CardInfoPreview";
 
 function FindCardsPage(){
 
+    // left off here create state varaible for state boolean for open and closing popup card preview 
+
     return(
         <>
             <div className="min-h-screen bg-gray-50">

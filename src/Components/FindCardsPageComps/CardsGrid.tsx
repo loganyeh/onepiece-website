@@ -7,7 +7,6 @@ function CardsGrid(){
     const [loading, setLoading] = useState(true);
     const [cardsData, setCardsData] = useState<CardImage[]>([]);
 
-
     useEffect(() => {
         async function getCards(){
             setLoading(true);
