@@ -127,9 +127,12 @@ function FilterSearch(){
 
                     {/* Search Button */}
                     <div className="flex justify-center">
-                        <div className="relative w-full max-w-sm px-4 py-2.5 bg-olive-500 flex justify-center items-center text-white rounded-full">
+                        <div className="w-full max-w-sm px-4 py-2.5 bg-olive-500 flex justify-center items-center text-white rounded-full">
+                            <div className="flex-1"></div>
                             <div className="font-semibold text-sm tracking-tighter">SEARCH</div>
-                            <i className='absolute right-4 bx bx-search text-xl' ></i>
+                            <div className="flex-1 flex justify-end items-center">
+                                <i className='bx bx-search text-xl' ></i>
+                            </div>
                         </div>
                     </div>
 
