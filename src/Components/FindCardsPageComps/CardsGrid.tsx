@@ -36,7 +36,7 @@ function CardsGrid(){
                     ? (Array.from({length: 20}).map((_, index) => {
                         return <div key={index} className={`aspect-[2/3] md:aspect-[3/4] bg-blue-300 rounded-md flex justify-center items-center`}></div>
                     }))
-                    :(cardsData.slice(0, 2).map((card, index) => {
+                    :(cardsData.slice(0, 1).map((card, index) => {
                         return <div key={index} className={`border border-gray-50 aspect-[2/3] md:aspect-[3/4] flex justify-center items-center rounded-md bg-cover bg-center`} style={{ backgroundImage: loading ? `` : `url(${card.card_image})` }}></div>
                     })))
                 }

@@ -6,6 +6,7 @@ export type CardImage = {
 
 type CardApiData = {
     card_set_id: string;
+    card_image: string;
     life: null | string;
     card_power: string;
     card_color: string;
