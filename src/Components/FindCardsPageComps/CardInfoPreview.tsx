@@ -1,6 +1,23 @@
 
 
+type CardStatsCategories = {
+    stat: string;
+    value: string;
+}
+
 function CardInfoPreview(){
+    const cardInfoPreviewBaseStatsData: CardStatsCategories[] = [
+        { stat: "Life", value: "4" },
+        { stat: "Attribute", value: "Special" },
+        { stat: "Power", value: "5000" },
+        { stat: "Counter", value: "-" },
+        { stat: "Color", value: "Red/Yellow" },
+        { stat: "Block icon", value: "4" },
+        { stat: "Type", value: "Egghead/Bonney Pirates" },
+        { stat: "empty stat", value: "empty value" },
+    ]
+    const baseEffectData = `[Opponent's Turn] If you have 1 or less Life cards, this Leader gains +2000 power.
+    [Activate: Main] [Once Per Turn] Give up to 1 of your opponent's Characters −1000 power during this turn. Then, if you have 2 or more Life cards, you may add 1 card from the top of your Life cards to your hand.`;
 
     return(
         <>
@@ -52,27 +69,33 @@ function CardInfoPreview(){
                         p-5 md:p-12 lg:p-8
                     ">
                         {/* Card Image */}
-                        <div className="aspect-[3/4.25] md:aspect-3/4 bg-blue-300 rounded-3xl" style={{ backgroundImage: `url(${""})`}}></div>
+                        <div className="aspect-[3/4.25] md:aspect-3/4 bg-blue-300 bg-center bg-cover rounded-3xl" style={{ backgroundImage: `url(${`/images/fallbackCardPreview.png`})`}}></div>
 
                         {/* Card Info & Stats */}
-                        <div className="border hidden lg:block">
-                            <div className="lg:grid grid-cols-2 aspect-10/8">
-                                {Array.from({length: 8}).map((_, index) => {
-                                    return <div key={index} className={`border-b grid grid-cols-2 items-center`}>
-                                        <div className={`${index === 7 ? `hidden` : ``}`}>Life</div>
-                                        <div className={`${index === 7 ? `hidden` : ``}`}>4</div>
+                        <div className="hidden lg:flex flex-col gap-4">
+                            <div className="lg:grid grid-cols-2 aspect-14/8">
+                                {/* {Array.from({length: 8}).map((_, index) => {
+                                    return <div key={index} className={`${index === 6 ? `border-b flex flex-col justify-center` : `grid grid-cols-2 border-b items-center`}`}>
+                                        <div className={`${index === 7 ? `hidden` : ``} font-bold`}>Life</div>
+                                        <div className={`${index === 7 ? `hidden` : ``} font-light`}>4</div>
+                                    </div>
+                                })} */}
+                                {cardInfoPreviewBaseStatsData.map((base, index) => {
+                                    return <div key={index} className={`${index === 6 ? `border-b flex flex-col justify-center` : `grid grid-cols-2 border-b items-center`}`}>
+                                        <div className={`${index === 7 ? `hidden` : ``} font-bold`}>{base.stat}</div>
+                                        <div className={`${index === 7 ? `hidden` : ``}`}>{base.value}</div>
                                     </div>
                                 })}
                             </div>
 
                             <div>
-                                <div className="border">Effect</div>
-                                <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, accusantium ipsam, non iusto expedita eaque praesentium laboriosam voluptas exercitationem cum sunt vero ad illum omnis labore assumenda et illo voluptatem?</div>
+                                <div className="font-bold">Effect</div>
+                                <div className="font-light">{baseEffectData}</div>
                             </div>
 
-                            <div className="border">
-                                <div>Card Set(s)</div>
-                                <div>-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]</div>
+                            <div className="p-2 bg-gray-100 rounded">
+                                <div className="font-bold">Card Set(s)</div>
+                                <div className="font-light text-sm">-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]</div>
                             </div>
 
                         </div>
