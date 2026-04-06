@@ -27,17 +27,17 @@ function CardsGrid(){
                 {loading
                 ?
                 (Array.from({length: 20}).map((_, index) => {
-                    return <div key={index} className={`aspect-[2/3] md:aspect-[3/4] bg-black rounded-md flex justify-center items-center`}>
+                    return <div key={index} className={`aspect-[2/3] md:aspect-[3/4] bg-black rounded-md flex justify-center items-center cursor-pointer transition-transform duration-300 hover:-translate-y-2`}>
                         {index === 0 && (<i className={`bx bx-loader-alt text-white text-4xl animate-spin`}></i>)}
                     </div>
                 })) 
                 :
                 (cardsData.length === 0 
                     ? (Array.from({length: 20}).map((_, index) => {
-                        return <div key={index} className={`aspect-[2/3] md:aspect-[3/4] bg-blue-300 rounded-md flex justify-center items-center`}></div>
+                        return <div key={index} className={`aspect-[2/3] md:aspect-[3/4] bg-blue-300 rounded-md flex justify-center items-center cursor-pointer transition-transform duration-300 hover:-translate-y-2`}></div>
                     }))
                     :(cardsData.slice(0, 1).map((card, index) => {
-                        return <div key={index} className={`border border-gray-50 aspect-[2/3] md:aspect-[3/4] flex justify-center items-center rounded-md bg-cover bg-center`} style={{ backgroundImage: loading ? `` : `url(${card.card_image})` }}></div>
+                        return <div key={index} className={`border border-gray-50 aspect-[2/3] md:aspect-[3/4] flex justify-center items-center rounded-md bg-cover bg-center cursor-pointer transition-transform duration-300 hover:-translate-y-2`} style={{ backgroundImage: loading ? `` : `url(${card.card_image})` }}></div>
                     })))
                 }
             </div>
