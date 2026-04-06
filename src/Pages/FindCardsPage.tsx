@@ -43,7 +43,7 @@ function FindCardsPage(){
                 </div>
 
                 {/* Card Info Preview */}
-                {/* <CardInfoPreview /> */}
+                <CardInfoPreview />
 
                 {/* Page Container */}
                 <div className="min-h-screen max-w-6xl mx-auto px-3 lg:px-0 xl:px-14">

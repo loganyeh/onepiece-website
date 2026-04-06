@@ -1,4 +1,6 @@
-
+import { useState, useEffect } from "react";
+import { fetchCardSetID, fetchCards } from "../../API/apiFindCardsPage";
+import type { CardSetID, CardImage } from "../../API/apiFindCardsPage";
 
 type CardStatsCategories = {
     stat: string;
@@ -6,32 +8,59 @@ type CardStatsCategories = {
 }
 
 function CardInfoPreview(){
+    const [cardSetId, setCardSetIdData] = useState<CardSetID[]>([]);
     const cardInfoPreviewBaseStatsData: CardStatsCategories[] = [
-        { stat: "Life", value: "4" },
-        { stat: "Attribute", value: "Special" },
-        { stat: "Power", value: "5000" },
-        { stat: "Counter", value: "-" },
-        { stat: "Color", value: "Red/Yellow" },
-        { stat: "Block icon", value: "4" },
-        { stat: "Type", value: "Egghead/Bonney Pirates" },
+        { stat: "Life", value: `${cardSetId[0]?.life || "4"}` },
+        { stat: "Attribute", value: `${cardSetId[0]?.attribute || "Special"}` },
+        { stat: "Power", value: `${cardSetId[0]?.card_power || "5000"}` },
+        { stat: "Counter", value: `${cardSetId[0]?.counter_amount || "-"}` },
+        { stat: "Color", value: `${cardSetId[0]?.card_color || "Red/Yellow"}` },
+        { stat: "Block icon", value: `${"-"}` },
+        { stat: "Type", value: `${cardSetId[0]?.card_type || "Egghead/Bonney Pirates"}` },
         { stat: "empty stat", value: "empty value" },
     ]
     const baseEffectData = `[Opponent's Turn] If you have 1 or less Life cards, this Leader gains +2000 power.
     [Activate: Main] [Once Per Turn] Give up to 1 of your opponent's Characters −1000 power during this turn. Then, if you have 2 or more Life cards, you may add 1 card from the top of your Life cards to your hand.`;
+    const [isCardPreview, setIsCardPreview] = useState(true);
+    // const [cardSetId, setCardSetIdData] = useState<CardSetID[]>([]);
+    const [cardData, setCardData] = useState<CardImage[]>([]);
+
+     useEffect(() => {
+        async function getCardSetID(){
+            // const data: CardSetID[] = await fetchCardSetID();
+            // setCardSetIdData(data);
+        }
+
+        getCardSetID();
+    }, [])
+
+    // useEffect(() => {
+    //     async function getCard(){
+    //         const data = await fetchCards();
+    //         setCardData(data);
+    //     }
+
+    //     // getCard();
+    // })
+
+    // function onClickExit(){
+    //     setIsCardPreview(false);
+    // }
 
     return(
         <>
             {/* Card Preview */}
-            <div className="fixed top-0 p-3 md:px-4 flex justify-center items-center md:items-start lg:items-center inset-0 bg-amber-200/40 md:scroll-auto md:overflow-y-auto">
+            <div className={`${isCardPreview ? `fixed` : `hidden`} top-0 p-3 md:px-4 flex justify-center items-center md:items-start lg:items-center inset-0 bg-amber-200/40 md:scroll-auto md:overflow-y-auto`}>
             {/* <div className="fixed border-2 border-red-600 inset-0 bg-amber-200/40"> */}
 
                 {/* Exit X */}
-                <i className='bx bx-x 
+                <i onClick={() => setIsCardPreview(false)} className={`bx bx-x 
                     fixed top-0 right-0
                     p-0.5 lg:p-2
                     text-white text-5xl md:text-8xl lg:text-3xl
                     bg-yellow-900 
-                ' ></i>
+                    cursor-pointer transition-colors duration-300 hover:bg-white/50 hover:text-yellow-900
+                `} ></i>
 
                 {/* Left and Right Arrow */}
                 <i className='bx bxs-left-arrow fixed w-fit left-1 top-1/2 p-2 md:p-4 lg:p-3 text-white text-sm md:text-2xl bg-yellow-900 rounded-full' ></i>
@@ -58,7 +87,9 @@ function CardInfoPreview(){
                             lg:text-center
                             font-bold text-lg md:text-4xl
                         ">
-                            Jewlery Bonney
+                            {/* Jewlery Bonney */}
+                            {/* {cardSetId[0]?.card_name} */}
+                            {cardSetId[0]?.card_name || "Jewlery Bonney"}
                         </div>
 
                     </div>
@@ -69,6 +100,7 @@ function CardInfoPreview(){
                         p-5 md:p-12 lg:p-8
                     ">
                         {/* Card Image */}
+                        {/* <div className="aspect-[3/4.25] md:aspect-3/4 bg-blue-300 bg-center bg-cover rounded-3xl" style={{ backgroundImage: `url(${ `${cardSetId[0]?.card_image}` || `/images/fallbackCardPreview.png`})`}}></div> */}
                         <div className="aspect-[3/4.25] md:aspect-3/4 bg-blue-300 bg-center bg-cover rounded-3xl" style={{ backgroundImage: `url(${`/images/fallbackCardPreview.png`})`}}></div>
 
                         {/* Card Info & Stats */}

@@ -2,6 +2,14 @@
 export type CardImage = {
     card_set_id: string;
     card_image: string;
+    life: null | string;
+    card_power: string;
+    card_color: string;
+    card_type: string;
+    attribute: string;
+    counter_amount: string;
+    block_icon?: string;
+    card_text: string;
 }
 
 type CardApiData = {
@@ -27,6 +35,16 @@ export async function fetchCards(){
 
 export type CardSetID = {
     card_set_id: string;
+    card_name: string;
+    card_image: string;
+    life: null | string;
+    card_power: string;
+    card_color: string;
+    card_type: string;
+    attribute: string;
+    counter_amount: string;
+    block_icon?: string;
+    card_text: string;
 }
 
 export async function fetchCardSetID(){

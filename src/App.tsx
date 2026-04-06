@@ -4,11 +4,13 @@ import './App.css'
 // page imports
 import FindCardsPage from './Pages/FindCardsPage'
 
+// context
+
 function App() {
 
   return (
-    <>
-      <FindCardsPage />
+    <> 
+        <FindCardsPage /> 
     </>
   )
 }
