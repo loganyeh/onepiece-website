@@ -9,23 +9,10 @@ import Footer from "../Components/FindCardsPageComps/ShellFindCardsPage/Footer";
 import SplashArt from "../Components/FindCardsPageComps/SplashArt";
 
 // testing api
-import { fetchCardSetID } from "../API/apiFindCardsPage";
-import type { CardSetID } from "../API/apiFindCardsPage";
 import { useState, useEffect } from "react";
+import CardInfoPreview from "../Components/FindCardsPageComps/CardInfoPreview";
 
 function FindCardsPage(){
-    const [cardSetId, setCardSetIdData] = useState<CardSetID[]>([]);
-
-    // disable api request for now
-    // ** working was able to get the data
-    // useEffect(() => {
-    //     async function getCardSetID(){
-    //         const data: CardSetID[] = await fetchCardSetID();
-    //         setCardSetIdData(data);
-    //     }
-
-    //     getCardSetID();
-    // }, [])
 
     return(
         <>
@@ -40,6 +27,9 @@ function FindCardsPage(){
                     <i className='bx bxs-right-arrow text-xs' ></i>
                     <div>CARD LIST</div>
                 </div>
+
+                {/* Card Info Preview */}
+                <CardInfoPreview />
 
                 {/* Page Container */}
                 <div className="min-h-screen max-w-6xl mx-auto px-3 lg:px-0 xl:px-14">
