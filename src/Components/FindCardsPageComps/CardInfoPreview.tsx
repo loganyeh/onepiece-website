@@ -13,7 +13,7 @@ type CardInfoPreviewProps = {
     setQuery: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function CardInfoPreview({ isCardPreview, setIsCardPreview, query, setQuery}: CardInfoPreviewProps){
+function CardInfoPreview({ isCardPreview, setIsCardPreview, query}: CardInfoPreviewProps){
     const [cardData, setCardData] = useState<CardImage[]>([]);
     const cardInfoPreviewBaseStatsData: CardStatsCategories[] = [
         { stat: "Life", value: `${cardData[0]?.life || "4"}` },
