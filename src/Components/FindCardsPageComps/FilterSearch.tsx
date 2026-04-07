@@ -22,7 +22,7 @@ function FilterSearch({ search, setSearch }: FilterSearchProps){
                     {/* Search */}
                     <div className="border-b pb-1 md:pb-3 flex justify-between items-center">
                         {/* <div className="text-sm md:text-3xl text-gray-300 font-semibold tracking-wide">Search ...</div> */}
-                        <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search..." className="text-sm md:text-3xl font-semibold tracking-wide"/>
+                        <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search..." className="h-full w-full text-sm md:text-3xl font-semibold tracking-wide outline-none"/>
                         <i className='bx bx-search text-xl md:text-3xl text-zinc-800'></i>
                     </div>
 
@@ -70,7 +70,7 @@ function FilterSearch({ search, setSearch }: FilterSearchProps){
                         {/* Search */}
                         <div className="border-b pb-1 flex-1 flex justify-between items-center">
                             {/* <input className="text-sm text-gray-300 font-semibold tracking-wide">Search ...</input> */}
-                            <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search..." className="text-sm font-semibold tracking-wide"/>
+                            <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search..." className="h-full w-full pl-2 text-sm font-semibold tracking-wide outline-none"/>
                             <i className='bx bx-search text-xl text-zinc-800'></i>
                         </div>
 

@@ -14,8 +14,9 @@ type CardInfoPreviewProps = {
 }
 
 function CardInfoPreview({ isCardPreview, setIsCardPreview, query}: CardInfoPreviewProps){
-    const [cardData] = useState<CardImage[]>([]);
-    // const [cardData, setCardData] = useState<CardImage[]>([]);
+    const [cardData, setCardData] = useState<CardImage[]>([]);
+    // const [cardData] = useState<CardImage[]>([]);
+    
     const cardInfoPreviewBaseStatsData: CardStatsCategories[] = [
         { stat: "Life", value: `${cardData[0]?.life || "4"}` },
         { stat: "Attribute", value: `${cardData[0]?.attribute || "Special"}` },
@@ -33,9 +34,9 @@ function CardInfoPreview({ isCardPreview, setIsCardPreview, query}: CardInfoPrev
         async function getCardSetID(){
 
             // disabled to not have too many requests
-            // const response = await fetch(`https://www.optcgapi.com/api/decks/filtered/?card_name=${query}`);
-            // const data = await response.json();
-            // setCardData(data);
+            const response = await fetch(`https://www.optcgapi.com/api/decks/filtered/?card_name=${query}`);
+            const data = await response.json();
+            setCardData(data);
         }
 
         getCardSetID();

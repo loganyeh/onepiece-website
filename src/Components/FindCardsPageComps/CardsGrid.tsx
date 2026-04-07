@@ -13,20 +13,20 @@ type CardsGridProps = {
 
 function CardsGrid({ setIsCardPreview, setQuery, search }: CardsGridProps){
     const [loading, setLoading] = useState(true);
-    const [cardsData] = useState<CardImage[]>([]);
-    // const [searchCardsData, setSearchCardData] = useState
-    // const [cardsData, setCardsData] = useState<CardImage[]>([]);
+    const [cardsData, setCardsData] = useState<CardImage[]>([]);
+
+    // const [cardsData] = useState<CardImage[]>([]);
 
     useEffect(() => {
         async function getCards(){
             setLoading(true);
             
-
-            // disable so not too many requests
             // const data = await fetchCards();
-            // const response = await fetch(`https://www.optcgapi.com/api/decks/filtered/?card_name=${search}`);
-            // const data = await response.json();
-            // setCardsData(data);
+            // disable so not too many requests
+
+            const response = await fetch(`https://www.optcgapi.com/api/decks/filtered/?card_name=${search}`);
+            const data = await response.json();
+            setCardsData(data);
             
             setLoading(false);
         }
@@ -47,11 +47,11 @@ function CardsGrid({ setIsCardPreview, setQuery, search }: CardsGridProps){
                 })) 
                 :
                 (cardsData.length === 0 
-                    ? (Array.from({length: 20}).map((_, index) => {
+                    ? (Array.from({length: 6}).map((_, index) => {
                         // return <div key={index} onClick={() => setIsCardPreview(true)} className={`aspect-[2/3] md:aspect-[3/4] bg-blue-300 rounded-md flex justify-center items-center cursor-pointer transition-transform duration-300 hover:-translate-y-2`}></div>
                         return <div key={index} onClick={() => {
                             setIsCardPreview(true);
-                        }} className={`aspect-[2/3] md:aspect-[3/4] bg-blue-300 rounded-md flex justify-center items-center cursor-pointer hover:border-2 hover:border-red-600`}></div>
+                        }} className={`aspect-[2/3] md:aspect-[3/4] bg-blue-300 rounded-md flex justify-center items-center cursor-pointer hover:border-2 hover:border-red-600`}>Unable to load api data. Please try again later.</div>
                     }))
                     // :(<div className={`border border-gray-50 aspect-[2/3] md:aspect-[3/4] flex justify-center items-center rounded-md bg-cover bg-center cursor-pointer transition-transform duration-300 hover:-translate-y-2`} style={{ backgroundImage: loading ? `` : `url(${cardsData[1].card_image})` }}></div>))
                     :(cardsData.slice(0, 20).map((card, index) => {
