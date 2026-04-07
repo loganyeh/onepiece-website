@@ -30,7 +30,7 @@ export type CardImage = {
 export async function fetchCards(){
     const response = await fetch(`https://www.optcgapi.com/api/allSTCards/`);
     const data: CardImage[] = await response.json();
-    // console.log(data.slice(0, 10));
+    console.log(data.slice(0, 10));
 
     return data;
 }
@@ -49,9 +49,11 @@ export async function fetchCards(){
 //     card_text: string;
 // }
 
-export async function fetchCardSetID(){
+export async function fetchCardSetID(query: string){
     // const response = await fetch(`https://www.optcgapi.com/api/sets/card/{card_set_id}/`);
-    const response = await fetch(`https://www.optcgapi.com/api/sets/card/OP01-001/`);
+    // const response = await fetch(`https://www.optcgapi.com/api/sets/card/ST01-003/`);
+    const response = await fetch(`https://www.optcgapi.com/api/sets/card/${query}/`);
+    // const response = await fetch(`https://www.optcgapi.com/api/sets/card/OP01-001/`);
     // get the card_set_id from whatever card you want;
     const data: CardImage[] = await response.json();
 
