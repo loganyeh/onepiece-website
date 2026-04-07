@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchCards } from "../../API/apiFindCardsPage";
+// import { fetchCards } from "../../API/apiFindCardsPage";
 import type { CardImage } from "../../API/apiFindCardsPage";
 
 type CardsGridProps = {
@@ -11,14 +11,15 @@ type CardsGridProps = {
 
 function CardsGrid({ setIsCardPreview, setQuery }: CardsGridProps){
     const [loading, setLoading] = useState(true);
-    const [cardsData, setCardsData] = useState<CardImage[]>([]);
+    const [cardsData] = useState<CardImage[]>([]);
+    // const [cardsData, setCardsData] = useState<CardImage[]>([]);
 
     useEffect(() => {
         async function getCards(){
             setLoading(true);
             
-            const data = await fetchCards();
-            setCardsData(data);
+            // const data = await fetchCards();
+            // setCardsData(data);
             
             setLoading(false);
         }
