@@ -15,6 +15,7 @@ import CardInfoPreview from "../Components/FindCardsPageComps/CardInfoPreview";
 function FindCardsPage(){
     const [isCardPreview, setIsCardPreview] = useState(false);
     const [query, setQuery] = useState<string>("");
+    const [search, setSearch] = useState<string>("");
 
     return(
         <>
@@ -39,13 +40,13 @@ function FindCardsPage(){
                     <CardListTitle />
 
                     {/* Filter Search */}
-                    <FilterSearch />
+                    <FilterSearch search={search} setSearch={setSearch} />
 
                     {/* Cards Header - Pages Arrows */}
                     <TopPageSelector />
 
                     {/* Cards Grid */}
-                    <CardsGrid isCardPreview={isCardPreview} setIsCardPreview={setIsCardPreview} query={query} setQuery={setQuery} />
+                    <CardsGrid isCardPreview={isCardPreview} setIsCardPreview={setIsCardPreview} query={query} setQuery={setQuery} search={search} setSearch={setSearch} />
                     
                     {/* Bottom Page Selector */}
                     <BottomPageSelector />

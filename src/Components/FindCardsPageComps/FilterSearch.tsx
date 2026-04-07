@@ -1,6 +1,10 @@
 
+type FilterSearchProps = {
+    search: string;
+    setSearch: React.Dispatch<React.SetStateAction<string>>;
+}
 
-function FilterSearch(){
+function FilterSearch({ search, setSearch }: FilterSearchProps){
     // Varaibles for Search Filter Section @ Breakpoint LG
     const colorFilterData = ["ALL", "Red", "Green", "Blue", "Purple", "Black", "Yellow", "Multicolor"];
     const cardTypeFilterData = ["ALL", "Leader", "Chracter", "Stage", "Event"];
@@ -17,7 +21,8 @@ function FilterSearch(){
 
                     {/* Search */}
                     <div className="border-b pb-1 md:pb-3 flex justify-between items-center">
-                        <div className="text-sm md:text-3xl text-gray-300 font-semibold tracking-wide">Search ...</div>
+                        {/* <div className="text-sm md:text-3xl text-gray-300 font-semibold tracking-wide">Search ...</div> */}
+                        <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search..." className="text-sm md:text-3xl font-semibold tracking-wide"/>
                         <i className='bx bx-search text-xl md:text-3xl text-zinc-800'></i>
                     </div>
 
@@ -64,7 +69,8 @@ function FilterSearch(){
                     <div className="flex gap-8">
                         {/* Search */}
                         <div className="border-b pb-1 flex-1 flex justify-between items-center">
-                            <div className="text-sm text-gray-300 font-semibold tracking-wide">Search ...</div>
+                            {/* <input className="text-sm text-gray-300 font-semibold tracking-wide">Search ...</input> */}
+                            <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search..." className="text-sm font-semibold tracking-wide"/>
                             <i className='bx bx-search text-xl text-zinc-800'></i>
                         </div>
 
