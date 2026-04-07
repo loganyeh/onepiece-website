@@ -49,13 +49,17 @@ export async function fetchCards(){
 //     card_text: string;
 // }
 
-export async function fetchCardSetID(){
+export async function fetchCardSetID(query: string){
     // const response = await fetch(`https://www.optcgapi.com/api/sets/card/{card_set_id}/`);
-    const response = await fetch(`https://www.optcgapi.com/api/sets/card/OP01-001/`);
+    // const response = await fetch(`https://www.optcgapi.com/api/sets/card/ST01-003/`);
+    // const response = await fetch(`https://www.optcgapi.com/api/sets/card/${query}/`);
+    const response = await fetch(`https://www.optcgapi.com/api/decks/filtered/?card_name=${query}`);
+
+    // const response = await fetch(`https://www.optcgapi.com/api/sets/card/OP01-001/`);
     // get the card_set_id from whatever card you want;
     const data: CardImage[] = await response.json();
 
-    console.log(data);
+    console.log(`data at fetch id ${data}`);
 
     return data;
 }

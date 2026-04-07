@@ -12,7 +12,13 @@ import SplashArt from "../Components/FindCardsPageComps/SplashArt";
 import { useState, useEffect } from "react";
 import CardInfoPreview from "../Components/FindCardsPageComps/CardInfoPreview";
 
+import type { CardImage } from "../API/apiFindCardsPage";
+
 function FindCardsPage(){
+
+    // left off here create state varaible for state boolean for open and closing popup card preview 
+    const [isCardPreview, setIsCardPreview] = useState(false);
+    const [query, setQuery] = useState<string>("");
 
     return(
         <>
@@ -29,7 +35,7 @@ function FindCardsPage(){
                 </div>
 
                 {/* Card Info Preview */}
-                <CardInfoPreview />
+                <CardInfoPreview isCardPreview={isCardPreview} setIsCardPreview={setIsCardPreview} query={query} setQuery={setQuery} />
 
                 {/* Page Container */}
                 <div className="min-h-screen max-w-6xl mx-auto px-3 lg:px-0 xl:px-14">
@@ -43,7 +49,7 @@ function FindCardsPage(){
                     <TopPageSelector />
 
                     {/* Cards Grid */}
-                    <CardsGrid />
+                    <CardsGrid isCardPreview={isCardPreview} setIsCardPreview={setIsCardPreview} query={query} setQuery={setQuery} />
                     
                     {/* Bottom Page Selector */}
                     <BottomPageSelector />
