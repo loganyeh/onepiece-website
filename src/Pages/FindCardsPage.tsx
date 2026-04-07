@@ -17,8 +17,8 @@ import type { CardImage } from "../API/apiFindCardsPage";
 function FindCardsPage(){
 
     // left off here create state varaible for state boolean for open and closing popup card preview 
-    const [isCardPreview, setIsCardPreview] = useState(true);
-    const [query, setQuery] = useState<CardImage[]>([]);
+    const [isCardPreview, setIsCardPreview] = useState(false);
+    const [query, setQuery] = useState<string>("");
 
     return(
         <>

@@ -10,8 +10,8 @@ type CardStatsCategories = {
 type CardInfoPreviewProps = {
     isCardPreview: boolean;
     setIsCardPreview: React.Dispatch<React.SetStateAction<boolean>>;
-    query: CardImage[];
-    setQuery: React.Dispatch<React.SetStateAction<CardImage[]>>;
+    query: string;
+    setQuery: React.Dispatch<React.SetStateAction<string>>;
 }
 
 function CardInfoPreview({ isCardPreview, setIsCardPreview, query, setQuery}: CardInfoPreviewProps){
@@ -34,12 +34,14 @@ function CardInfoPreview({ isCardPreview, setIsCardPreview, query, setQuery}: Ca
     // api working and all its data is in the right place  √√√
      useEffect(() => {
         async function getCardSetID(){
-            // const data: CardImage[] = await fetchCardSetID(query);
+            // const data: CardImage[] = await fetchCardSetID("OP01-001");
+            // const response = await fetch(`https://www.optcgapi.com/api/decks/filtered/?card_name=${query}`);
+            // const data = await response.json();
             // setCardData(data);
         }
 
         getCardSetID();
-    }, [])
+    }, [query])
 
     return(
         <>
@@ -80,8 +82,9 @@ function CardInfoPreview({ isCardPreview, setIsCardPreview, query, setQuery}: Ca
                             lg:text-center
                             font-bold text-lg md:text-4xl
                         ">
-                            {cardData[0]?.card_name || "Jewlery Bonney"}
-                            {/* {query || "Jewlery Bonney"} */}
+                            {/* {cardData[0]?.card_name || "Jewlery Bonney"} */}
+                            {/* {cardData?[0].card_name || "Jewlery Bonney"} */}
+                            {query || "Jewlery Bonney"}
                         </div>
 
                     </div>

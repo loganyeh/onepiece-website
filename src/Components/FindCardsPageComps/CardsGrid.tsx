@@ -5,8 +5,8 @@ import type { CardImage } from "../../API/apiFindCardsPage";
 type CardsGridProps = {
     isCardPreview: boolean;
     setIsCardPreview: React.Dispatch<React.SetStateAction<boolean>>;
-    query: CardImage[];
-    setQuery: React.Dispatch<React.SetStateAction<CardImage[]>>;
+    query: string;
+    setQuery: React.Dispatch<React.SetStateAction<string>>;
 }
 
 
@@ -55,8 +55,9 @@ function CardsGrid({ isCardPreview, setIsCardPreview, query, setQuery }: CardsGr
                     :(cardsData.slice(0, 20).map((card, index) => {
                         return <div key={index} onClick={() => {
                             setIsCardPreview(true);
-                            // setQuery(card.card_set_id);
-                        }} className={`border border-gray-50 aspect-[2/3] md:aspect-[3/4] flex justify-center items-center rounded-md bg-cover bg-center cursor-pointer transition-transform duration-300 hover:-translate-y-2`} style={{ backgroundImage: loading ? `` : `url(${card.card_image})` }}></div>
+                            setQuery(card.card_name);
+                        }} className={`border border-gray-50 aspect-[2/3] md:aspect-[3/4] flex justify-center items-center rounded-md bg-cover bg-center cursor-pointer hover:border-2 hover:border-black`} style={{ backgroundImage: loading ? `` : `url(${card.card_image})` }}></div>
+                        // }} className={`border border-gray-50 aspect-[2/3] md:aspect-[3/4] flex justify-center items-center rounded-md bg-cover bg-center cursor-pointer transition-transform duration-300 hover:-translate-y-2`} style={{ backgroundImage: loading ? `` : `url(${card.card_image})` }}></div>
                     })))
                 }
             </div>
