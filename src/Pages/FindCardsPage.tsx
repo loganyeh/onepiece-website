@@ -9,14 +9,10 @@ import Footer from "../Components/FindCardsPageComps/ShellFindCardsPage/Footer";
 import SplashArt from "../Components/FindCardsPageComps/SplashArt";
 
 // testing api
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import CardInfoPreview from "../Components/FindCardsPageComps/CardInfoPreview";
 
-import type { CardImage } from "../API/apiFindCardsPage";
-
 function FindCardsPage(){
-
-    // left off here create state varaible for state boolean for open and closing popup card preview 
     const [isCardPreview, setIsCardPreview] = useState(false);
     const [query, setQuery] = useState<string>("");
 

@@ -9,28 +9,22 @@ type CardsGridProps = {
     setQuery: React.Dispatch<React.SetStateAction<string>>;
 }
 
-
-function CardsGrid({ isCardPreview, setIsCardPreview, query, setQuery }: CardsGridProps){
+function CardsGrid({ setIsCardPreview, setQuery }: CardsGridProps){
     const [loading, setLoading] = useState(true);
     const [cardsData, setCardsData] = useState<CardImage[]>([]);
 
-    // first render
     useEffect(() => {
         async function getCards(){
             setLoading(true);
             
-            // API IS WORKING √√√√
-            // const data = await fetchCards();
-            // setCardsData(data);
+            const data = await fetchCards();
+            setCardsData(data);
             
             setLoading(false);
         }
 
         getCards();
     }, []);
-
-    // when you click a card
-
 
     return(
         <>

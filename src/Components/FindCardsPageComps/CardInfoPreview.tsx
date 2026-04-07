@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { fetchCardSetID, fetchCards } from "../../API/apiFindCardsPage";
 import type { CardImage } from "../../API/apiFindCardsPage";
 
 type CardStatsCategories = {
@@ -15,8 +14,6 @@ type CardInfoPreviewProps = {
 }
 
 function CardInfoPreview({ isCardPreview, setIsCardPreview, query, setQuery}: CardInfoPreviewProps){
-    // const [cardSetId, setCardSetIdData] = useState<CardImage[]>([]);
-    // const [isCardPreview, setIsCardPreview] = useState(true);
     const [cardData, setCardData] = useState<CardImage[]>([]);
     const cardInfoPreviewBaseStatsData: CardStatsCategories[] = [
         { stat: "Life", value: `${cardData[0]?.life || "4"}` },
@@ -31,13 +28,11 @@ function CardInfoPreview({ isCardPreview, setIsCardPreview, query, setQuery}: Ca
     const baseEffectData = `[Opponent's Turn] If you have 1 or less Life cards, this Leader gains +2000 power.
     [Activate: Main] [Once Per Turn] Give up to 1 of your opponent's Characters −1000 power during this turn. Then, if you have 2 or more Life cards, you may add 1 card from the top of your Life cards to your hand.`;
 
-    // api working and all its data is in the right place  √√√
      useEffect(() => {
         async function getCardSetID(){
-            // const data: CardImage[] = await fetchCardSetID("OP01-001");
-            // const response = await fetch(`https://www.optcgapi.com/api/decks/filtered/?card_name=${query}`);
-            // const data = await response.json();
-            // setCardData(data);
+            const response = await fetch(`https://www.optcgapi.com/api/decks/filtered/?card_name=${query}`);
+            const data = await response.json();
+            setCardData(data);
         }
 
         getCardSetID();
@@ -82,8 +77,6 @@ function CardInfoPreview({ isCardPreview, setIsCardPreview, query, setQuery}: Ca
                             lg:text-center
                             font-bold text-lg md:text-4xl
                         ">
-                            {/* {cardData[0]?.card_name || "Jewlery Bonney"} */}
-                            {/* {cardData?[0].card_name || "Jewlery Bonney"} */}
                             {query || "Jewlery Bonney"}
                         </div>
 
@@ -96,7 +89,6 @@ function CardInfoPreview({ isCardPreview, setIsCardPreview, query, setQuery}: Ca
                     ">
                         {/* Card Image */}
                         <div className="aspect-[3/4.25] md:aspect-3/4 bg-blue-300 bg-center bg-cover rounded-3xl" style={{ backgroundImage: `url(${cardData[0]?.card_image || "/images/fallbackCardPreview.png"})`}}></div>
-
                         {/* <div className="aspect-[3/4.25] md:aspect-3/4 bg-blue-300 bg-center bg-cover rounded-3xl" style={{ backgroundImage: `url(${`/images/fallbackCardPreview.png`})`}}></div> */}
 
                         {/* Card Info & Stats */}
