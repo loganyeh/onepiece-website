@@ -7,25 +7,32 @@ type CardsGridProps = {
     setIsCardPreview: React.Dispatch<React.SetStateAction<boolean>>;
     query: string;
     setQuery: React.Dispatch<React.SetStateAction<string>>;
+    search: string;
+    setSearch: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function CardsGrid({ setIsCardPreview, setQuery }: CardsGridProps){
+function CardsGrid({ setIsCardPreview, setQuery, search }: CardsGridProps){
     const [loading, setLoading] = useState(true);
     const [cardsData] = useState<CardImage[]>([]);
+    // const [searchCardsData, setSearchCardData] = useState
     // const [cardsData, setCardsData] = useState<CardImage[]>([]);
 
     useEffect(() => {
         async function getCards(){
             setLoading(true);
             
+
+            // disable so not too many requests
             // const data = await fetchCards();
+            // const response = await fetch(`https://www.optcgapi.com/api/decks/filtered/?card_name=${search}`);
+            // const data = await response.json();
             // setCardsData(data);
             
             setLoading(false);
         }
 
         getCards();
-    }, []);
+    }, [search]);
 
     return(
         <>

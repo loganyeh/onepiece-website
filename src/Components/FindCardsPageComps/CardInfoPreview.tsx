@@ -31,6 +31,8 @@ function CardInfoPreview({ isCardPreview, setIsCardPreview, query}: CardInfoPrev
 
      useEffect(() => {
         async function getCardSetID(){
+
+            // disabled to not have too many requests
             // const response = await fetch(`https://www.optcgapi.com/api/decks/filtered/?card_name=${query}`);
             // const data = await response.json();
             // setCardData(data);
